@@ -1,0 +1,711 @@
+{
+  "acceptance": {
+    "accuracy": 0.7336026042922594,
+    "macro_f1": 0.5456510424522178,
+    "passed": false,
+    "requirement": "test accuracy >= 0.85 OR macro F1 >= 0.80",
+    "status": "MEASURED"
+  },
+  "artifact_paths": {
+    "model": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/python-delay-severity-prod-v11-20260928T2030Z/selected_model.pkl",
+    "predictions": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/python-delay-severity-prod-v11-20260928T2030Z/predictions.jsonl",
+    "result": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/python-delay-severity-prod-v11-20260928T2030Z/result.json"
+  },
+  "baseline_metrics": {},
+  "dataset_version": "production-v1.1",
+  "engine": "python",
+  "evidence_status": "CERTIFIED RUNTIME MEASURED; REVIEW ACCEPTANCE",
+  "feature_list": [
+    "scheduled_hour_utc",
+    "service_weekday",
+    "is_weekend",
+    "service_month",
+    "direction_id",
+    "distance_km"
+  ],
+  "feature_version": "python-raw-delay-1607c910dd6dbe59759dd7a8ceb955cc2b44f31739a4bbd655ef654b95036cdd",
+  "input_hashes": {
+    "manifest_sha256": "158a6ca9d96e9423fb31f75a55573704fdba8296abf4bc6e617c28daa16d5315",
+    "partition_sha256": {
+      "test": "aba5cc17c9d845df656b1565f99c98e6719571d953f75d04880fc91911d13229",
+      "train": "909340b4372032e565d3c8158612ddeae8a4b87f617d04c7edee5de219a28b8c",
+      "validation": "353d71e9cf2da8b87efaa3800e4834015a1f356d7d42d952f629594e07d28fb1"
+    }
+  },
+  "metrics": {
+    "test": {
+      "accuracy": 0.7336026042922594,
+      "averaging": "support_weighted; macro_f1 uses all declared classes",
+      "class_labels": [
+        "ON_TIME",
+        "MINOR_DELAY",
+        "MODERATE_DELAY"
+      ],
+      "confusion_matrix": [
+        [
+          65,
+          1262,
+          1383
+        ],
+        [
+          2,
+          5311,
+          934
+        ],
+        [
+          22,
+          816,
+          6793
+        ]
+      ],
+      "f1": 0.6742791024676524,
+      "macro_f1": 0.5456510424522178,
+      "per_class": [
+        {
+          "f1": 0.04644515898535191,
+          "label": "ON_TIME",
+          "precision": 0.7303370786516854,
+          "recall": 0.023985239852398525,
+          "support": 2710
+        },
+        {
+          "f1": 0.7789674391317102,
+          "label": "MINOR_DELAY",
+          "precision": 0.7187711462985519,
+          "recall": 0.8501680806787257,
+          "support": 6247
+        },
+        {
+          "f1": 0.8115405292395914,
+          "label": "MODERATE_DELAY",
+          "precision": 0.7456641053787048,
+          "recall": 0.8901847726379243,
+          "support": 7631
+        }
+      ],
+      "precision": 0.7330322897406569,
+      "recall": 0.7336026042922594,
+      "sample_count": 16588,
+      "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+    },
+    "validation": {
+      "accuracy": 0.7338011978946095,
+      "averaging": "support_weighted; macro_f1 uses all declared classes",
+      "class_labels": [
+        "ON_TIME",
+        "MINOR_DELAY",
+        "MODERATE_DELAY"
+      ],
+      "confusion_matrix": [
+        [
+          63,
+          1281,
+          1360
+        ],
+        [
+          0,
+          5259,
+          957
+        ],
+        [
+          22,
+          780,
+          6807
+        ]
+      ],
+      "f1": 0.674144290012353,
+      "macro_f1": 0.5452727848799933,
+      "per_class": [
+        {
+          "f1": 0.045177482968806026,
+          "label": "ON_TIME",
+          "precision": 0.7411764705882353,
+          "recall": 0.02329881656804734,
+          "support": 2704
+        },
+        {
+          "f1": 0.7770390070921985,
+          "label": "MINOR_DELAY",
+          "precision": 0.7184426229508196,
+          "recall": 0.846042471042471,
+          "support": 6216
+        },
+        {
+          "f1": 0.8136018645789757,
+          "label": "MODERATE_DELAY",
+          "precision": 0.7460543621218764,
+          "recall": 0.8945985017742147,
+          "support": 7609
+        }
+      ],
+      "precision": 0.7348725368817376,
+      "recall": 0.7338011978946095,
+      "sample_count": 16529,
+      "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+    }
+  },
+  "model_comparison": [
+    {
+      "effective_parameters": {
+        "estimator__C": 1.0,
+        "estimator__class_weight": null,
+        "estimator__dual": false,
+        "estimator__fit_intercept": true,
+        "estimator__intercept_scaling": 1,
+        "estimator__l1_ratio": null,
+        "estimator__max_iter": 300,
+        "estimator__multi_class": "deprecated",
+        "estimator__n_jobs": null,
+        "estimator__penalty": "l2",
+        "estimator__random_state": 20260926,
+        "estimator__solver": "lbfgs",
+        "estimator__tol": 0.0001,
+        "estimator__verbose": 0,
+        "estimator__warm_start": false,
+        "memory": null,
+        "scale__copy": true,
+        "scale__with_mean": true,
+        "scale__with_std": true,
+        "transform_input": null,
+        "verbose": false
+      },
+      "model_name": "logistic_regression",
+      "model_type": "classification",
+      "parameters": {
+        "max_iter": 300
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 3.382421614998748,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "accuracy": 0.7313207090568092,
+        "averaging": "support_weighted; macro_f1 uses all declared classes",
+        "class_labels": [
+          "ON_TIME",
+          "MINOR_DELAY",
+          "MODERATE_DELAY"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1281,
+            1423
+          ],
+          [
+            0,
+            5259,
+            957
+          ],
+          [
+            0,
+            780,
+            6829
+          ]
+        ],
+        "f1": 0.6660650739081097,
+        "macro_f1": 0.5297150279715502,
+        "per_class": [
+          {
+            "f1": 0.0,
+            "label": "ON_TIME",
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2704
+          },
+          {
+            "f1": 0.7770390070921985,
+            "label": "MINOR_DELAY",
+            "precision": 0.7184426229508196,
+            "recall": 0.846042471042471,
+            "support": 6216
+          },
+          {
+            "f1": 0.8121060768224521,
+            "label": "MODERATE_DELAY",
+            "precision": 0.7415571723314149,
+            "recall": 0.8974898146931266,
+            "support": 7609
+          }
+        ],
+        "precision": 0.6115522940608645,
+        "recall": 0.7313207090568092,
+        "sample_count": 16529,
+        "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+      }
+    },
+    {
+      "effective_parameters": {
+        "estimator__ccp_alpha": 0.0,
+        "estimator__class_weight": null,
+        "estimator__criterion": "gini",
+        "estimator__max_depth": 6,
+        "estimator__max_features": null,
+        "estimator__max_leaf_nodes": null,
+        "estimator__min_impurity_decrease": 0.0,
+        "estimator__min_samples_leaf": 1,
+        "estimator__min_samples_split": 2,
+        "estimator__min_weight_fraction_leaf": 0.0,
+        "estimator__monotonic_cst": null,
+        "estimator__random_state": 20260926,
+        "estimator__splitter": "best",
+        "memory": null,
+        "scale__copy": true,
+        "scale__with_mean": true,
+        "scale__with_std": true,
+        "transform_input": null,
+        "verbose": false
+      },
+      "model_name": "decision_tree",
+      "model_type": "classification",
+      "parameters": {
+        "max_depth": 6
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 0.4172438219993637,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "accuracy": 0.7338011978946095,
+        "averaging": "support_weighted; macro_f1 uses all declared classes",
+        "class_labels": [
+          "ON_TIME",
+          "MINOR_DELAY",
+          "MODERATE_DELAY"
+        ],
+        "confusion_matrix": [
+          [
+            63,
+            1281,
+            1360
+          ],
+          [
+            0,
+            5259,
+            957
+          ],
+          [
+            22,
+            780,
+            6807
+          ]
+        ],
+        "f1": 0.674144290012353,
+        "macro_f1": 0.5452727848799933,
+        "per_class": [
+          {
+            "f1": 0.045177482968806026,
+            "label": "ON_TIME",
+            "precision": 0.7411764705882353,
+            "recall": 0.02329881656804734,
+            "support": 2704
+          },
+          {
+            "f1": 0.7770390070921985,
+            "label": "MINOR_DELAY",
+            "precision": 0.7184426229508196,
+            "recall": 0.846042471042471,
+            "support": 6216
+          },
+          {
+            "f1": 0.8136018645789757,
+            "label": "MODERATE_DELAY",
+            "precision": 0.7460543621218764,
+            "recall": 0.8945985017742147,
+            "support": 7609
+          }
+        ],
+        "precision": 0.7348725368817376,
+        "recall": 0.7338011978946095,
+        "sample_count": 16529,
+        "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+      }
+    },
+    {
+      "effective_parameters": {
+        "estimator__bootstrap": true,
+        "estimator__ccp_alpha": 0.0,
+        "estimator__class_weight": null,
+        "estimator__criterion": "gini",
+        "estimator__max_depth": 8,
+        "estimator__max_features": "sqrt",
+        "estimator__max_leaf_nodes": null,
+        "estimator__max_samples": null,
+        "estimator__min_impurity_decrease": 0.0,
+        "estimator__min_samples_leaf": 1,
+        "estimator__min_samples_split": 2,
+        "estimator__min_weight_fraction_leaf": 0.0,
+        "estimator__monotonic_cst": null,
+        "estimator__n_estimators": 80,
+        "estimator__n_jobs": 1,
+        "estimator__oob_score": false,
+        "estimator__random_state": 20260926,
+        "estimator__verbose": 0,
+        "estimator__warm_start": false,
+        "memory": null,
+        "scale__copy": true,
+        "scale__with_mean": true,
+        "scale__with_std": true,
+        "transform_input": null,
+        "verbose": false
+      },
+      "model_name": "random_forest",
+      "model_type": "classification",
+      "parameters": {
+        "max_depth": 8,
+        "n_estimators": 80
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 2.2631719229993905,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "accuracy": 0.7324097041563313,
+        "averaging": "support_weighted; macro_f1 uses all declared classes",
+        "class_labels": [
+          "ON_TIME",
+          "MINOR_DELAY",
+          "MODERATE_DELAY"
+        ],
+        "confusion_matrix": [
+          [
+            26,
+            1281,
+            1397
+          ],
+          [
+            0,
+            5259,
+            957
+          ],
+          [
+            8,
+            780,
+            6821
+          ]
+        ],
+        "f1": 0.6694904702893449,
+        "macro_f1": 0.5362762915982157,
+        "per_class": [
+          {
+            "f1": 0.018991964937910884,
+            "label": "ON_TIME",
+            "precision": 0.7647058823529411,
+            "recall": 0.009615384615384616,
+            "support": 2704
+          },
+          {
+            "f1": 0.7770390070921985,
+            "label": "MINOR_DELAY",
+            "precision": 0.7184426229508196,
+            "recall": 0.846042471042471,
+            "support": 6216
+          },
+          {
+            "f1": 0.8127979027645377,
+            "label": "MODERATE_DELAY",
+            "precision": 0.743433242506812,
+            "recall": 0.8964384281771586,
+            "support": 7609
+          }
+        ],
+        "precision": 0.737515130520841,
+        "recall": 0.7324097041563313,
+        "sample_count": 16529,
+        "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+      }
+    }
+  ],
+  "model_name": "decision_tree",
+  "model_type": "classification",
+  "parameters": {
+    "estimator__ccp_alpha": 0.0,
+    "estimator__class_weight": null,
+    "estimator__criterion": "gini",
+    "estimator__max_depth": 6,
+    "estimator__max_features": null,
+    "estimator__max_leaf_nodes": null,
+    "estimator__min_impurity_decrease": 0.0,
+    "estimator__min_samples_leaf": 1,
+    "estimator__min_samples_split": 2,
+    "estimator__min_weight_fraction_leaf": 0.0,
+    "estimator__monotonic_cst": null,
+    "estimator__random_state": 20260926,
+    "estimator__splitter": "best",
+    "memory": null,
+    "scale__copy": true,
+    "scale__with_mean": true,
+    "scale__with_std": true,
+    "transform_input": null,
+    "verbose": false
+  },
+  "periods": {
+    "test": {
+      "end": "2026-06-30",
+      "start": "2026-04-01"
+    },
+    "train": {
+      "end": "2025-12-31",
+      "start": "2025-01-01"
+    },
+    "validation": {
+      "end": "2026-03-31",
+      "start": "2026-01-01"
+    }
+  },
+  "random_seed": 20260926,
+  "reproducibility": {
+    "command": [
+      "/home/manal/Desktop/UrbanTransit-IQ/ml_execution/__main__.py",
+      "--manifest",
+      "reports/ml_handoffs/python-delay-severity-prod-v11-20260928T1935Z/manifest.json",
+      "--output",
+      "reports/ml_runs/python-delay-severity-prod-v11-20260928T2030Z",
+      "--engine",
+      "python",
+      "--max-rows",
+      "100000"
+    ],
+    "created_at_utc": "2026-09-28T14:33:17.507925+00:00",
+    "libraries": {
+      "numpy": "1.26.4",
+      "pyspark": null,
+      "scikit-learn": "1.7.2"
+    },
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "source_sha256": {
+      "ml_execution/__init__.py": "a4c084b9908f2c28c9836e5a2e74adb5ebb07d3727f0faeb280f9f7f7642d711",
+      "ml_execution/__main__.py": "779f9ba5b96ee8f5a3abb8a050a4d0b452bcf0e74e258f86bd444b5f8ec98817",
+      "ml_execution/analytics.py": "91d348317fad956e6bd61552650de521946ef621058456f03cac921b4b8f423a",
+      "ml_execution/clustering_handoff.py": "316791b157c67f41594c82e10bf6e8d92cbed7f7b77dd98fd0eb33e1b6b3d7b6",
+      "ml_execution/contracts.py": "15855487ee14fc325dbb5aecd2e7a2a6862695be43ce3d768dca2203c8d92e52",
+      "ml_execution/demand_handoff.py": "d823c47a58b0f2830c8e3fcf688b19c9047f767e8148992a8169b8a10764c6e8",
+      "ml_execution/handoff.py": "8f1618d11e2e5db46e0ff869680cbf90635cc9d6f900343c32d986271b2101b9",
+      "ml_execution/metrics.py": "86f19bed1d6b8ef063efd7b2eebbe08fd4fc7c769c85ae2ae850b8ddec869b86",
+      "ml_execution/models.py": "78e476f776f5461e4fc67abdf72aee2ef7c12080af8065ce7c605beaba303b90",
+      "ml_execution/occupancy_handoff.py": "5564ae44d01182997b65f330b7db44b8f554d288434419172748fd1bb6e17f34",
+      "ml_execution/python_delay_handoff.py": "3b713591043141bbce37faac30b74cede715be89b5bc177fd3c30acb158cd8ba",
+      "ml_execution/results.py": "6c9ea771fed00933f08048fe978ede4d0bea68a304f1962de426827eaf517b99",
+      "ml_execution/runner.py": "8343efd23540dbacfba75dad439e74e6ec76adbd221074a282cfc9beb422ab15",
+      "python_pipeline/splits.py": "461ee6c9e84bcfcfb6223b4d57409b53366260b6eec78c6262f281848524af25"
+    },
+    "thread_environment": {
+      "MKL_NUM_THREADS": null,
+      "OMP_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null
+    }
+  },
+  "runtime_sec": 13.61648636999962,
+  "sample_counts": {
+    "test": 16588,
+    "train": 66883,
+    "validation": 16529
+  },
+  "schema_version": "1.0",
+  "selected_model": "decision_tree",
+  "selection_metric": "macro_f1",
+  "selection_rationale": "Best measured validation macro_f1=0.5452727848799933; alphabetical tie-break; test excluded from selection",
+  "status": "SUCCEEDED",
+  "task_contract": {
+    "certification": {
+      "evidence_path": "feature_certification.json",
+      "scope": "owner-approved production-v1.1 input, Python-owned source derivation, bounded package integrity, chronological and leakage validation",
+      "status": "CERTIFIED"
+    },
+    "class_labels": [
+      "ON_TIME",
+      "MINOR_DELAY",
+      "MODERATE_DELAY"
+    ],
+    "dataset_version": "production-v1.1",
+    "feature_version": "python-raw-delay-1607c910dd6dbe59759dd7a8ceb955cc2b44f31739a4bbd655ef654b95036cdd",
+    "features": [
+      "scheduled_hour_utc",
+      "service_weekday",
+      "is_weekend",
+      "service_month",
+      "direction_id",
+      "distance_km"
+    ],
+    "grain": "one valid observed trip stop event derived from certified raw Python inputs",
+    "producer": "python",
+    "schema_version": "1.0",
+    "source_provenance": {
+      "dataset_version": "production-v1.1",
+      "implementation": "ml_execution.python_delay_handoff",
+      "owner_attestation_reference": "reports/dataset_certification/production-v1.1-owner-attestation.json#sha256=f4a1ad3d5e23a42d0be786fbdf05c3937a615857d6fe85980058bcf7648baf2c",
+      "owner_marker_sha256": "f4a1ad3d5e23a42d0be786fbdf05c3937a615857d6fe85980058bcf7648baf2c",
+      "producer": "python",
+      "python_feature_contract_fingerprint": "1607c910dd6dbe59759dd7a8ceb955cc2b44f31739a4bbd655ef654b95036cdd",
+      "raw_input_file_count": 112,
+      "raw_input_policy": "Reads certified production-v1.1 raw CSV only; does not read Spark Parquet/features/predictions or Python pipeline outputs.",
+      "raw_input_sha256": {
+        "metadata/private_injection_manifest.json": "fe33932a4cc8ac7b508cc38bf3aca86aa92018bacac4834d4a7ebd2f8a62785a",
+        "raw/route_patterns/part-000.csv": "81a1848957a9d213e5516aab18105ea82a6960c4b852d373ce05774523289c9f",
+        "raw/route_stops/part-000.csv": "6a1d7dedacb3c99e58e58b99e75e93f0e0f3d67ddc7f54b9e4176b7a6890374f",
+        "raw/routes/part-000.csv": "524a88ed9564d9b08f0cb0d9e949888a29ad8e7119052b0efff48ff5e6f3c4c6",
+        "raw/schedule_stop_times/part-000.csv": "c87def38b56217636192a45b030ee84f6e0fe9c2630c6ccfdf359030898191d5",
+        "raw/schedule_stop_times/part-001.csv": "a7bda6a9e4c083ef525ae697f83253f5ae1c74e32553dbd9f43d74dfa2d0a28d",
+        "raw/schedule_stop_times/part-002.csv": "a291e870c564dfaf5acf40467e47b0c99801efb54598960d9a2577e16b55c0d9",
+        "raw/schedules/part-000.csv": "314fd4be05832e19787a66b06f7f030f55ff9ff74a085cf9e48d68f7a2410ac8",
+        "raw/trip_stop_events/part-000.csv": "93acae8633cb37c023733be5dd98b1654be4f7c4f485e17ae3d34ba58de70260",
+        "raw/trip_stop_events/part-001.csv": "10cddfc9caba5e0dec6a1342631a36d286c01da4e1aae34873285d5d37f7f0f0",
+        "raw/trip_stop_events/part-002.csv": "a788f5cd5ab2afb96bb90ddf7191924a62dd1abe52a252824d68cadb45d92864",
+        "raw/trip_stop_events/part-003.csv": "aef8d2cd803759a49baf66d128511b8891b768c5ce0c02fd409a378a7801acbd",
+        "raw/trip_stop_events/part-004.csv": "ded573a1d0e9550aa9589ea5f55f8bb899606cfce0e361ee137aac0c5a248547",
+        "raw/trip_stop_events/part-005.csv": "8affa72525d861eaec6433dac5b219f37bcf248aeb9f97f3041f8fb10e197140",
+        "raw/trip_stop_events/part-006.csv": "0ece64ccb4ec6fe271ceb4873dcd5a5d0b69a6ea61b10771fe0233c6c211e571",
+        "raw/trip_stop_events/part-007.csv": "e6a6a3eb4e9d8b35d855b1f893a514a794e37fcc933c7a2ba377c86495b911de",
+        "raw/trip_stop_events/part-008.csv": "16e7403369917a25cb865b128242e6429179fd31b1a17c34e000795304f9a529",
+        "raw/trip_stop_events/part-009.csv": "233cafbd7a9e5de32d8ebb30e8ab827bbcf9795c36b0c987cda66ebe187be015",
+        "raw/trip_stop_events/part-010.csv": "db6baa8063d59c29e648bb63f88d914fd790d4577a267f2427d2bb3142437918",
+        "raw/trip_stop_events/part-011.csv": "fca8cf4bcf1ca8f9ec1eb2f748a319ad6dc87b1b0a6340404f35c824c2edc04d",
+        "raw/trip_stop_events/part-012.csv": "b0a6ba4ece2de6ba4465aacd5b1954e999571f3432825a76f40dfb342560336f",
+        "raw/trip_stop_events/part-013.csv": "841834b79a68b902824a7f6392a403ffd8a8abc763855b43301963125c2e6605",
+        "raw/trip_stop_events/part-014.csv": "8c4726f034ab511fa507950a9197dbabdf653995dee0a603faf0d656a1c8d279",
+        "raw/trip_stop_events/part-015.csv": "f73bce0bc35d031234157f53ae03b68f8b20755df033420aac4ec87f15d8187e",
+        "raw/trip_stop_events/part-016.csv": "7768393bddd6a1f7b527a84f5ab102c4cf7b2c6d0705f900d8445e8c9231e94b",
+        "raw/trip_stop_events/part-017.csv": "fdab5a8e6e6e447df4aa3b04a84b766e71ed3849473a58eb97b2d777f762c77e",
+        "raw/trip_stop_events/part-018.csv": "b9e2b1c8034f62660f3ada381ab2cb0d4f00d51d29010a08e3ee505c8c728ac0",
+        "raw/trip_stop_events/part-019.csv": "4a2ba0abd0a45abf23fe0cb313d8872160bbce68b70ca351d08901151652a8dd",
+        "raw/trip_stop_events/part-020.csv": "fb5437149c4331e29abfa45b1eb30bdb94865b00c4a416b9523570667d4e9313",
+        "raw/trip_stop_events/part-021.csv": "50edae0ff5e6c94f7225cbb9a3771ddc9bf6d3c68878aafcc59310a2ab45e4a3",
+        "raw/trip_stop_events/part-022.csv": "c37253e22ea31d7350fcdd331baeb21857b8486759c4f749b4b7448703c4ba69",
+        "raw/trip_stop_events/part-023.csv": "6a9c436459ebfb49e124e60c34fb0e652aeb0ccf03fe5c03a2df00cd430ff47a",
+        "raw/trip_stop_events/part-024.csv": "a97d5801d6d1a54d01bb796d3068b7206c29c6450fcacc4e69e948d81f0771da",
+        "raw/trip_stop_events/part-025.csv": "89d3c61d7389fec4935f38e7c6fc688cd42d4db7f1691d148be53fcd0bf3ddb7",
+        "raw/trip_stop_events/part-026.csv": "78ad147f4fc8d4270d8c332892625f5e37d801e6c65e76fb2c10bd2d77fa9455",
+        "raw/trip_stop_events/part-027.csv": "2ce0ea25feb9a1fcd1f460a939530a68cdd663e1e62271d8bba2b716d385c9c9",
+        "raw/trip_stop_events/part-028.csv": "b948953e293e1959219b60a4e31d22c7485005e800f28869126ea29a64ff1005",
+        "raw/trip_stop_events/part-029.csv": "3decd433f9729b1bee3d1af0058423594eabcae4f6065a8e5dd30d03ff8c5c62",
+        "raw/trip_stop_events/part-030.csv": "2e48121d779660ec1e4f8bd961ef19efdc080fe2592ed13cc76dbc3f10f554f2",
+        "raw/trip_stop_events/part-031.csv": "d6ed5426d6f67db0c6ab4db131b47997c2850718ff65b85b05afb23b5081e1f2",
+        "raw/trip_stop_events/part-032.csv": "6f28059f68c372e3d3ca1138a5ae8b89abff5d1ad773556aa7291e2f610f1642",
+        "raw/trip_stop_events/part-033.csv": "54ddf8f8a1c38eee60eb70ef28542eb2d1ac121b1de171b05876af547a30a662",
+        "raw/trip_stop_events/part-034.csv": "d965704d2d6f89e80a3849cde25f074bb807a4649aeef6c54e7cc2b61888cfe0",
+        "raw/trip_stop_events/part-035.csv": "da39c98d7b03cc4726c1e1655069c7cd66d98125cf1f8276d36ca35b71602bb6",
+        "raw/trip_stop_events/part-036.csv": "e49a8510cc3ed1513a202a7df62ce6439dc872ecab3b65608da30e14a98ed19e",
+        "raw/trip_stop_events/part-037.csv": "3a018d998ad47012199cedff75c6b31f413d2a215c8b2122334a453432666796",
+        "raw/trip_stop_events/part-038.csv": "2bce78062e16afe134fa01ac796f5ca07f89a4f86b6095d08fddec755e12ed9d",
+        "raw/trip_stop_events/part-039.csv": "9e927c1d43f82afbdbc4ce74383d1013e8f94686b71b187ed4df125daec8dbb6",
+        "raw/trip_stop_events/part-040.csv": "ca35bbb9a7541a55bd88ee5e849215df28b0d7d3ae468827603b796834d715a4",
+        "raw/trip_stop_events/part-041.csv": "22430d21d8aec9463702063c3ea053ca660bf01326a8183a751275264055c4e1",
+        "raw/trip_stop_events/part-042.csv": "4f440825d851eed77d23f526eae4515f87dd40a8ea319f5ff65c2b20540107bc",
+        "raw/trip_stop_events/part-043.csv": "fa5a7a79bb1a54c92f64b85eea68ef2925b6bb2181c4008b90f5e733be04af3a",
+        "raw/trip_stop_events/part-044.csv": "69a89b3475533c9cbab62a0555c586c730b9bacbae17a0ebc9297d4b799404c2",
+        "raw/trip_stop_events/part-045.csv": "ef2570f8a996c5291bf941f9108da0b5c6554537f8ab63c5f36fd9f3504a8ea9",
+        "raw/trip_stop_events/part-046.csv": "11f912c3a9d7332460a0bc2f434e8216e83b412019dfddcab4ece2ea24d9cbee",
+        "raw/trip_stop_events/part-047.csv": "813f3a1d506de74d569369b687d7e0bc6dfff565e1ab97e83972562b74209820",
+        "raw/trip_stop_events/part-048.csv": "6adec53f2e484713ed89e839ba68785307f666518d5a284662b92ea674be94e0",
+        "raw/trip_stop_events/part-049.csv": "93638980cedf094032b45dc59a54fb65a31aa3556c157abba0661331b2079a06",
+        "raw/trip_stop_events/part-050.csv": "da34eda30e30b360630f8659ececf4ba0474c2620015903db6eaf93b2f3dceba",
+        "raw/trip_stop_events/part-051.csv": "992a2f2b46a248e645b9f870f9118e75619e3022b1f801327a0173e82b50fbdf",
+        "raw/trip_stop_events/part-052.csv": "99187a1db11fefc265bff0c06215a0b0887b8f5bef5ab55f0c0663396b459816",
+        "raw/trip_stop_events/part-053.csv": "56c1359b3c0453a4490215f7bda1f6f565a04eceb218274341c3c82780f5edd9",
+        "raw/trip_stop_events/part-054.csv": "1409f59b0b321e13bbb5a4545d5644383aaafa449f130d280680ecf1d0ca97d6",
+        "raw/trip_stop_events/part-055.csv": "307992b7b046c82e655974c2f1a5020d662e372961058aed4709859a656dd5f0",
+        "raw/trip_stop_events/part-056.csv": "51de91255b62e276c7d9bd73add37bfe9d0f8d470f506f96dfb0b6ecaf4d0527",
+        "raw/trip_stop_events/part-057.csv": "7dd0dae87216ecfb638dc31b068b97a28df992ac051ccc470ea8de4f5dc9afc6",
+        "raw/trip_stop_events/part-058.csv": "079c4ec8bd4ba42a74d140d55a1d8b58e766749334f28b31d036d8bcd9ba948b",
+        "raw/trip_stop_events/part-059.csv": "726fe4dbec96f91427d7b4ac0aac9da9aedec6d37de39e6530855194233f18e0",
+        "raw/trip_stop_events/part-060.csv": "d1e8bdcf5e985e436ccf7a4a9dac0a794840977d939c7cd71270a09d0291d207",
+        "raw/trip_stop_events/part-061.csv": "1f7631f3f7d6ba46d746a2a33e095271e249ed3639419428740f2e32a389056e",
+        "raw/trip_stop_events/part-062.csv": "215834335217c0b4034f05a0e47759dff1ad6b542b74672fbf2dc69fb40f6336",
+        "raw/trip_stop_events/part-063.csv": "9d9acb4b0fb4805d77b24e95325f22c683474b15c0444bb29e878f46e4b6d803",
+        "raw/trip_stop_events/part-064.csv": "56fbaa88f94e46fd60d56126341000b7cfaa541116e169640e4cc43cde0ab376",
+        "raw/trip_stop_events/part-065.csv": "6736e5934a561baf2d12de4cd81b31a736c0cfc2bdd45ac9fc529c9731d366ac",
+        "raw/trip_stop_events/part-066.csv": "1437acfba253d0a191fa8d38e01c7c29072ae6d42a42fee24c945af19865ca15",
+        "raw/trip_stop_events/part-067.csv": "0db3485864478155dffd74a7891a6e8dad3dca7221bd2bd79f2e0892a65537d4",
+        "raw/trip_stop_events/part-068.csv": "464e46601594b0060cf6f1d568a3b68423d6c0a631d78742a32c0916fff27aaf",
+        "raw/trip_stop_events/part-069.csv": "ff44d4d829cbac74b3d1624d4c5ee7fcc5e333be71ee82226236f0406aa99873",
+        "raw/trip_stop_events/part-070.csv": "a60a8dc08f7090e45f70ea4966d3377e5ba234f7a1a12442951c98ae6e84bea2",
+        "raw/trip_stop_events/part-071.csv": "31d8da67ce74d538c5bd019640a384157f686b03ea9763bf54c21fbde2c2f256",
+        "raw/trip_stop_events/part-072.csv": "902d369be21f5f6f6564b0dce4320af28df6563e145400fe58b0020def0cee31",
+        "raw/trip_stop_events/part-073.csv": "8d93c671b7daacf0e1204d165719d95e893fbe8e1a7d6309bd11d66758888f42",
+        "raw/trip_stop_events/part-074.csv": "95ff3d8cd9c138a3fcf6504301156c15606048d03cc334a1fcbe10c9b458b2ba",
+        "raw/trip_stop_events/part-075.csv": "a1e7b5f29336dafb6cacb4698fbc6499a11e2df004715056d63f6229e34f8d49",
+        "raw/trip_stop_events/part-076.csv": "30ae364a87a45779547894488d15204d932a317980a7f721987513dfbcbd8027",
+        "raw/trip_stop_events/part-077.csv": "abba2b3cf76d7418ace3400ee82ea0919e1379b94bc418b7d74dc8ccbce43e6b",
+        "raw/trip_stop_events/part-078.csv": "80ad1564c2372d2fe9382dec4532c2dc1d35ec5dc3ba840836e1bfd89b0051e8",
+        "raw/trip_stop_events/part-079.csv": "cc77652af7900e040f2dc31b57a023b26392bb42f05c51c4195140e0ba04ec5e",
+        "raw/trip_stop_events/part-080.csv": "d53b0ef0d375287dbf766acd2b7f05235cec8c49509c1f3b521276d14b5b3344",
+        "raw/trip_stop_events/part-081.csv": "e32598dbfd7d1433db5294f79fa27a7721910b144143ecb4239a8a65ebb4c298",
+        "raw/trip_stop_events/part-082.csv": "3c8bcf9d957e19e57a7a32112f527bb9b2df86b4a9a4ca63bcbfbf6307b9811d",
+        "raw/trip_stop_events/part-083.csv": "2993f348c4e10f3ee9877453394024f84cc2e8d599408e3d3ea09e3c14f838d7",
+        "raw/trip_stop_events/part-084.csv": "762c2492f1af9484681aaf0ec38b1791179abc96be4253c92aa4eadc7bf9725a",
+        "raw/trip_stop_events/part-085.csv": "5bc865171f00a8aa258fda1b024ad2981020c350b7f3956ff1037e0baf53a7e5",
+        "raw/trip_stop_events/part-086.csv": "5d86ae673156516f8c2379346d54ab5ecf6da715b440e650320f50d838dc4a2b",
+        "raw/trip_stop_events/part-087.csv": "2e7a958347c14a7ffbe9d9e48d5de2570a24c33f0a416d11bc62ac3df057cfe7",
+        "raw/trip_stop_events/part-088.csv": "04cc3a5f2097f193538e95927bd8be2b93168c86946f898121534e1235a81e82",
+        "raw/trip_stop_events/part-089.csv": "f5b96b28ab711367472f992e587c46840bbe9bd9f3a648c4def59b05f660186e",
+        "raw/trip_stop_events/part-090.csv": "666845559c6d00ba309760f758ada36f4c0b9989eef08d8a96584423c3008ff3",
+        "raw/trip_stop_events/part-091.csv": "a0f797a8fa31b1be81d9531aad02b6afe1b12f4d11425375b5d260dddc47d367",
+        "raw/trip_stop_events/part-092.csv": "db0bfdb5d17960bdf9c3ab878d917be926e35813206cb22ac00de50d351bcdf6",
+        "raw/trip_stop_events/part-093.csv": "a53a0302f9300843b16a4f5e34cf81b984c581ebc4dffb0fd9fbdc4cbe8ac891",
+        "raw/trip_stop_events/part-094.csv": "08ca1b06701af5fdfe2027eb63f2a230dba5a81ce5cd84ae392c4993315ed598",
+        "raw/trip_stop_events/part-095.csv": "5d43fd463a88319180c9ab387d451d0265ee7051700128bd7347d3eacb3d85b6",
+        "raw/trip_stop_events/part-096.csv": "1f741d01c863e475024f1a3176925eb4474bb145c8af2f01b022d5c36f22494f",
+        "raw/trip_stop_events/part-097.csv": "4a1c3f83b39417370088014daf1995362675b1615ef72d9a27e10d013f701f12",
+        "raw/trip_stop_events/part-098.csv": "84d02cfcbc44745f51414598b5537624489f668152fa850c038e7b58e430e118",
+        "raw/trips/part-000.csv": "267b1131c1512056dbef9878b17d1025635060e71f7337d41141d4687857eebc",
+        "raw/trips/part-001.csv": "9d3ee35646aac2910d35d43bee69d451a218577a463d28378cd5a398944f6c50",
+        "raw/trips/part-002.csv": "f146dabff39f95fdb202d1c5251266faa496e49d6ca4e28f6a7d6cfb40b0b0b1",
+        "raw/trips/part-003.csv": "9c8429019f39b2868813693544098d2d43209bd674e50a202207c4ab7b2afaa4",
+        "raw/trips/part-004.csv": "bb865b6b584fe643396cf0942558767612693568c6cda779aeb7a85e7e0ce82d"
+      },
+      "sampling_policy": "Deterministic SHA-256 rank by split, source-derived label and stop_event_id; proportional chronological split/class quotas, no label or feature synthesis.",
+      "seed": 20260926,
+      "source_dataset_certification": "OWNER_APPROVED_PRODUCTION_V1_1",
+      "source_feature_version": "python_pipeline.features raw-contract semantics",
+      "source_label_counts": {
+        "test": {
+          "MINOR_DELAY": 43164,
+          "MODERATE_DELAY": 52734,
+          "ON_TIME": 18725
+        },
+        "train": {
+          "MINOR_DELAY": 174156,
+          "MODERATE_DELAY": 212177,
+          "ON_TIME": 75849
+        },
+        "validation": {
+          "MINOR_DELAY": 42952,
+          "MODERATE_DELAY": 52580,
+          "ON_TIME": 18683
+        }
+      },
+      "source_manifest_sha256": "26a90869999405a41af3e6f58d8156e4f61f60fde242c454f1658a2e5066cf03",
+      "source_row_count_eligible": 691020,
+      "source_row_policy": "Only quality_status=VALID observed event rows and CURRENT non-cancelled trip context with schedule, route, pattern and stop-time availability known by the scheduled departure; target outcome availability is at or after the event and no later than its fixed split boundary.",
+      "source_run_id": "RUN498f509222a2382c01b5c865f2a7174404f0d3a676128f4d01078ea8968ff8e9",
+      "split_boundaries": {
+        "test": [
+          "2026-04-01",
+          "2026-07-01"
+        ],
+        "train": [
+          "2025-01-01",
+          "2026-01-01"
+        ],
+        "validation": [
+          "2026-01-01",
+          "2026-04-01"
+        ]
+      },
+      "unsupported_labels": [
+        "MAJOR_DELAY",
+        "SEVERE_DELAY"
+      ]
+    },
+    "target": "target",
+    "target_definition": "Python-derived max(0, actual departure minus schedule-known departure), encoded using configured delay-severity thresholds; no Spark feature rows or labels are consumed.",
+    "task_name": "delay_severity",
+    "thresholds": {
+      "delay_seconds": [
+        60,
+        300,
+        600,
+        1800
+      ]
+    }
+  },
+  "task_name": "delay_severity"
+}

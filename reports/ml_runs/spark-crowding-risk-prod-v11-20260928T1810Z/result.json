@@ -1,0 +1,606 @@
+{
+  "acceptance": {
+    "accuracy": 0.9953580331814665,
+    "macro_f1": 0.49883680854730317,
+    "passed": true,
+    "requirement": "test accuracy >= 0.85 OR macro F1 >= 0.80",
+    "status": "MEASURED"
+  },
+  "artifact_paths": {
+    "model": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model",
+    "predictions": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/predictions.jsonl",
+    "result": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/result.json"
+  },
+  "baseline_metrics": {},
+  "dataset_version": "production-v1.1",
+  "engine": "spark",
+  "evidence_status": "CERTIFIED RUNTIME MEASURED; REVIEW ACCEPTANCE",
+  "feature_list": [
+    "scheduled_hour_utc",
+    "service_weekday",
+    "is_weekend",
+    "service_month",
+    "direction_id",
+    "distance_km",
+    "stop_sequence",
+    "historical_occupancy_ratio_lag_1",
+    "historical_onboard_departure_lag_1"
+  ],
+  "feature_version": "spark-occupancy-asof-crowding_risk-20260928",
+  "input_hashes": {
+    "manifest_sha256": "3598df12e66cdb9abb07b827f3f2ea4c969d533950ad8bec606ace16b9a276f3",
+    "partition_sha256": {
+      "test": "050574471955e1431a32c8383d8766aea11414a7db942566183e610cd57b5e97",
+      "train": "98546367ee243e58c98538a1de4f2955483ec00dc2f63990f2d968c5628fedce",
+      "validation": "d067b8d839b1935b091e42ddd72cc67a645ba78dd08de6cd07a2e7559646d493"
+    }
+  },
+  "metrics": {
+    "test": {
+      "accuracy": 0.9953580331814665,
+      "averaging": "support_weighted; macro_f1 uses all declared classes",
+      "brier_score": 0.00460710514062052,
+      "class_labels": [
+        "WITHIN_CAPACITY",
+        "OVER_CAPACITY"
+      ],
+      "confusion_matrix": [
+        [
+          11579,
+          0
+        ],
+        [
+          54,
+          0
+        ]
+      ],
+      "f1": 0.9930424492683269,
+      "flagged_count": 0,
+      "macro_f1": 0.49883680854730317,
+      "per_class": [
+        {
+          "f1": 0.9976736170946063,
+          "label": "WITHIN_CAPACITY",
+          "precision": 0.9953580331814665,
+          "recall": 1.0,
+          "support": 11579
+        },
+        {
+          "f1": 0.0,
+          "label": "OVER_CAPACITY",
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 54
+        }
+      ],
+      "precision": 0.9907376142188774,
+      "probability_threshold": 0.5,
+      "recall": 0.9953580331814665,
+      "sample_count": 11633,
+      "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+    },
+    "validation": {
+      "accuracy": 0.9970433286743361,
+      "averaging": "support_weighted; macro_f1 uses all declared classes",
+      "brier_score": 0.002950334635603108,
+      "class_labels": [
+        "WITHIN_CAPACITY",
+        "OVER_CAPACITY"
+      ],
+      "confusion_matrix": [
+        [
+          18547,
+          0
+        ],
+        [
+          55,
+          0
+        ]
+      ],
+      "f1": 0.9955671817234872,
+      "flagged_count": 0,
+      "macro_f1": 0.49925973781259253,
+      "per_class": [
+        {
+          "f1": 0.9985194756251851,
+          "label": "WITHIN_CAPACITY",
+          "precision": 0.9970433286743361,
+          "recall": 1.0,
+          "support": 18547
+        },
+        {
+          "f1": 0.0,
+          "label": "OVER_CAPACITY",
+          "precision": 0.0,
+          "recall": 0.0,
+          "support": 55
+        }
+      ],
+      "precision": 0.9940953992540003,
+      "probability_threshold": 0.5,
+      "recall": 0.9970433286743361,
+      "sample_count": 18602,
+      "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+    }
+  },
+  "model_comparison": [
+    {
+      "effective_parameters": {
+        "stage0.inputCol": "raw_features",
+        "stage0.outputCol": "features",
+        "stage0.withMean": true,
+        "stage0.withStd": true,
+        "stage1.aggregationDepth": 2,
+        "stage1.elasticNetParam": 0.0,
+        "stage1.family": "auto",
+        "stage1.featuresCol": "features",
+        "stage1.fitIntercept": true,
+        "stage1.labelCol": "label",
+        "stage1.maxBlockSizeInMB": 0.0,
+        "stage1.maxIter": 300,
+        "stage1.predictionCol": "prediction",
+        "stage1.probabilityCol": "probability",
+        "stage1.rawPredictionCol": "rawPrediction",
+        "stage1.regParam": 0.0,
+        "stage1.standardization": true,
+        "stage1.threshold": 0.5,
+        "stage1.tol": 1e-06
+      },
+      "model_name": "logistic_regression",
+      "model_type": "classification",
+      "parameters": {
+        "max_iter": 300
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 122.4368535270005,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "accuracy": 0.9970433286743361,
+        "averaging": "support_weighted; macro_f1 uses all declared classes",
+        "brier_score": 0.002950334635603108,
+        "class_labels": [
+          "WITHIN_CAPACITY",
+          "OVER_CAPACITY"
+        ],
+        "confusion_matrix": [
+          [
+            18547,
+            0
+          ],
+          [
+            55,
+            0
+          ]
+        ],
+        "f1": 0.9955671817234872,
+        "flagged_count": 0,
+        "macro_f1": 0.49925973781259253,
+        "per_class": [
+          {
+            "f1": 0.9985194756251851,
+            "label": "WITHIN_CAPACITY",
+            "precision": 0.9970433286743361,
+            "recall": 1.0,
+            "support": 18547
+          },
+          {
+            "f1": 0.0,
+            "label": "OVER_CAPACITY",
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 55
+          }
+        ],
+        "precision": 0.9940953992540003,
+        "probability_threshold": 0.5,
+        "recall": 0.9970433286743361,
+        "sample_count": 18602,
+        "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+      }
+    },
+    {
+      "effective_parameters": {
+        "stage0.inputCol": "raw_features",
+        "stage0.outputCol": "features",
+        "stage0.withMean": true,
+        "stage0.withStd": true,
+        "stage1.cacheNodeIds": false,
+        "stage1.checkpointInterval": 10,
+        "stage1.featuresCol": "features",
+        "stage1.impurity": "gini",
+        "stage1.labelCol": "label",
+        "stage1.leafCol": "",
+        "stage1.maxBins": 32,
+        "stage1.maxDepth": 6,
+        "stage1.maxMemoryInMB": 256,
+        "stage1.minInfoGain": 0.0,
+        "stage1.minInstancesPerNode": 1,
+        "stage1.minWeightFractionPerNode": 0.0,
+        "stage1.predictionCol": "prediction",
+        "stage1.probabilityCol": "probability",
+        "stage1.rawPredictionCol": "rawPrediction",
+        "stage1.seed": 20260926
+      },
+      "model_name": "decision_tree",
+      "model_type": "classification",
+      "parameters": {
+        "max_depth": 6
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 16.021104660001583,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "accuracy": 0.9969895710138694,
+        "averaging": "support_weighted; macro_f1 uses all declared classes",
+        "brier_score": 0.002968112942959783,
+        "class_labels": [
+          "WITHIN_CAPACITY",
+          "OVER_CAPACITY"
+        ],
+        "confusion_matrix": [
+          [
+            18546,
+            1
+          ],
+          [
+            55,
+            0
+          ]
+        ],
+        "f1": 0.9955403022286119,
+        "flagged_count": 1,
+        "macro_f1": 0.4992462582104016,
+        "per_class": [
+          {
+            "f1": 0.9984925164208032,
+            "label": "WITHIN_CAPACITY",
+            "precision": 0.997043169722058,
+            "recall": 0.9999460829244622,
+            "support": 18547
+          },
+          {
+            "f1": 0.0,
+            "label": "OVER_CAPACITY",
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 55
+          }
+        ],
+        "precision": 0.9940952407716918,
+        "probability_threshold": 0.5,
+        "recall": 0.9969895710138694,
+        "sample_count": 18602,
+        "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+      }
+    },
+    {
+      "effective_parameters": {
+        "stage0.inputCol": "raw_features",
+        "stage0.outputCol": "features",
+        "stage0.withMean": true,
+        "stage0.withStd": true,
+        "stage1.bootstrap": true,
+        "stage1.cacheNodeIds": false,
+        "stage1.checkpointInterval": 10,
+        "stage1.featureSubsetStrategy": "auto",
+        "stage1.featuresCol": "features",
+        "stage1.impurity": "gini",
+        "stage1.labelCol": "label",
+        "stage1.leafCol": "",
+        "stage1.maxBins": 32,
+        "stage1.maxDepth": 8,
+        "stage1.maxMemoryInMB": 256,
+        "stage1.minInfoGain": 0.0,
+        "stage1.minInstancesPerNode": 1,
+        "stage1.minWeightFractionPerNode": 0.0,
+        "stage1.numTrees": 80,
+        "stage1.predictionCol": "prediction",
+        "stage1.probabilityCol": "probability",
+        "stage1.rawPredictionCol": "rawPrediction",
+        "stage1.seed": 20260926,
+        "stage1.subsamplingRate": 1.0
+      },
+      "model_name": "random_forest",
+      "model_type": "classification",
+      "parameters": {
+        "max_depth": 8,
+        "n_estimators": 80
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 26.333653427000172,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "accuracy": 0.9970433286743361,
+        "averaging": "support_weighted; macro_f1 uses all declared classes",
+        "brier_score": 0.0029479538161129703,
+        "class_labels": [
+          "WITHIN_CAPACITY",
+          "OVER_CAPACITY"
+        ],
+        "confusion_matrix": [
+          [
+            18547,
+            0
+          ],
+          [
+            55,
+            0
+          ]
+        ],
+        "f1": 0.9955671817234872,
+        "flagged_count": 0,
+        "macro_f1": 0.49925973781259253,
+        "per_class": [
+          {
+            "f1": 0.9985194756251851,
+            "label": "WITHIN_CAPACITY",
+            "precision": 0.9970433286743361,
+            "recall": 1.0,
+            "support": 18547
+          },
+          {
+            "f1": 0.0,
+            "label": "OVER_CAPACITY",
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 55
+          }
+        ],
+        "precision": 0.9940953992540003,
+        "probability_threshold": 0.5,
+        "recall": 0.9970433286743361,
+        "sample_count": 18602,
+        "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+      }
+    }
+  ],
+  "model_name": "logistic_regression",
+  "model_type": "classification",
+  "parameters": {
+    "stage0.inputCol": "raw_features",
+    "stage0.outputCol": "features",
+    "stage0.withMean": true,
+    "stage0.withStd": true,
+    "stage1.aggregationDepth": 2,
+    "stage1.elasticNetParam": 0.0,
+    "stage1.family": "auto",
+    "stage1.featuresCol": "features",
+    "stage1.fitIntercept": true,
+    "stage1.labelCol": "label",
+    "stage1.maxBlockSizeInMB": 0.0,
+    "stage1.maxIter": 300,
+    "stage1.predictionCol": "prediction",
+    "stage1.probabilityCol": "probability",
+    "stage1.rawPredictionCol": "rawPrediction",
+    "stage1.regParam": 0.0,
+    "stage1.standardization": true,
+    "stage1.threshold": 0.5,
+    "stage1.tol": 1e-06
+  },
+  "periods": {
+    "test": {
+      "end": "2026-06-30",
+      "start": "2026-04-01"
+    },
+    "train": {
+      "end": "2025-12-31",
+      "start": "2025-01-01"
+    },
+    "validation": {
+      "end": "2026-03-31",
+      "start": "2026-01-01"
+    }
+  },
+  "random_seed": 20260926,
+  "reproducibility": {
+    "command": [
+      "/home/manal/Desktop/UrbanTransit-IQ/ml_execution/__main__.py",
+      "--engine",
+      "spark",
+      "--manifest",
+      "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_handoffs/spark-occupancy-asof-prod-v11-20260928T1740Z/crowding_risk/manifest.json",
+      "--output",
+      "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z",
+      "--max-rows",
+      "100000"
+    ],
+    "created_at_utc": "2026-09-28T12:54:01.117294+00:00",
+    "libraries": {
+      "numpy": "1.26.4",
+      "pyspark": null,
+      "scikit-learn": "1.7.2"
+    },
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "source_sha256": {
+      "ml_execution/__init__.py": "a4c084b9908f2c28c9836e5a2e74adb5ebb07d3727f0faeb280f9f7f7642d711",
+      "ml_execution/__main__.py": "779f9ba5b96ee8f5a3abb8a050a4d0b452bcf0e74e258f86bd444b5f8ec98817",
+      "ml_execution/analytics.py": "91d348317fad956e6bd61552650de521946ef621058456f03cac921b4b8f423a",
+      "ml_execution/contracts.py": "15855487ee14fc325dbb5aecd2e7a2a6862695be43ce3d768dca2203c8d92e52",
+      "ml_execution/demand_handoff.py": "d823c47a58b0f2830c8e3fcf688b19c9047f767e8148992a8169b8a10764c6e8",
+      "ml_execution/handoff.py": "8f1618d11e2e5db46e0ff869680cbf90635cc9d6f900343c32d986271b2101b9",
+      "ml_execution/metrics.py": "86f19bed1d6b8ef063efd7b2eebbe08fd4fc7c769c85ae2ae850b8ddec869b86",
+      "ml_execution/models.py": "78e476f776f5461e4fc67abdf72aee2ef7c12080af8065ce7c605beaba303b90",
+      "ml_execution/occupancy_handoff.py": "5564ae44d01182997b65f330b7db44b8f554d288434419172748fd1bb6e17f34",
+      "ml_execution/results.py": "6c9ea771fed00933f08048fe978ede4d0bea68a304f1962de426827eaf517b99",
+      "ml_execution/runner.py": "8343efd23540dbacfba75dad439e74e6ec76adbd221074a282cfc9beb422ab15",
+      "python_pipeline/splits.py": "461ee6c9e84bcfcfb6223b4d57409b53366260b6eec78c6262f281848524af25"
+    },
+    "spark_conf": {
+      "spark.default.parallelism": null,
+      "spark.master": "local[2]",
+      "spark.sql.shuffle.partitions": "16"
+    },
+    "spark_version": "3.5.0",
+    "thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  },
+  "runtime_sec": 193.60971209300078,
+  "sample_counts": {
+    "test": 11633,
+    "train": 69765,
+    "validation": 18602
+  },
+  "schema_version": "1.0",
+  "selected_model": "logistic_regression",
+  "selection_metric": "macro_f1",
+  "selection_rationale": "Best measured validation macro_f1=0.49925973781259253; alphabetical tie-break; test excluded from selection",
+  "status": "SUCCEEDED",
+  "task_contract": {
+    "certification": {
+      "evidence_path": "feature_certification.json",
+      "scope": "bounded ML handoff integrity and pre-event temporal-contract validation only",
+      "status": "CERTIFIED"
+    },
+    "class_labels": [
+      "WITHIN_CAPACITY",
+      "OVER_CAPACITY"
+    ],
+    "dataset_version": "production-v1.1",
+    "feature_version": "spark-occupancy-asof-crowding_risk-20260928",
+    "features": [
+      "scheduled_hour_utc",
+      "service_weekday",
+      "is_weekend",
+      "service_month",
+      "direction_id",
+      "distance_km",
+      "stop_sequence",
+      "historical_occupancy_ratio_lag_1",
+      "historical_onboard_departure_lag_1"
+    ],
+    "grain": "one scheduled route-stop departure with a later observed load outcome",
+    "producer": "spark",
+    "risk_probability_threshold": 0.5,
+    "schema_version": "1.0",
+    "source_provenance": {
+      "assignment_availability_source": {
+        "availability_policy": "Maximum of announced_at_utc, row value_available_at, and any correction_time for the exact ACTUAL departure assignment; only VALID rows whose effective interval contains actual departure qualify.",
+        "input_files": {
+          "/home/manal/Desktop/UrbanTransit-IQ/raw_data/production-v1.1/raw/trip_vehicle_assignments/part-000.csv": {
+            "bytes": 39781027,
+            "sha256": "b710c0902b3acce14e10f2e2395b2ef6697e5d6bace16f0734f77aeef06837b6"
+          },
+          "/home/manal/Desktop/UrbanTransit-IQ/raw_data/production-v1.1/raw/trip_vehicle_assignments/part-001.csv": {
+            "bytes": 39780893,
+            "sha256": "dc625210ab980048102630a77faf8711bc9b39f67bba4e49a71c66f3df03b04e"
+          },
+          "/home/manal/Desktop/UrbanTransit-IQ/raw_data/production-v1.1/raw/trip_vehicle_assignments/part-002.csv": {
+            "bytes": 39780993,
+            "sha256": "531fd44d34433e60c08e23326b10820a8bf7d8539e667f609b0292e2209cae19"
+          },
+          "/home/manal/Desktop/UrbanTransit-IQ/raw_data/production-v1.1/raw/trip_vehicle_assignments/part-003.csv": {
+            "bytes": 39780955,
+            "sha256": "94a92b07b2b00dd3164eb90db8990554840f01fbcf47299c96c1bc7c24fa9d3e"
+          },
+          "/home/manal/Desktop/UrbanTransit-IQ/raw_data/production-v1.1/raw/trip_vehicle_assignments/part-004.csv": {
+            "bytes": 39780923,
+            "sha256": "1cc66c9d0cc3f89e099fca03028345d38e0bd59e25a8efee84c187042254b63b"
+          },
+          "/home/manal/Desktop/UrbanTransit-IQ/raw_data/production-v1.1/raw/trip_vehicle_assignments/part-005.csv": {
+            "bytes": 39780993,
+            "sha256": "654a1bd256e8bd24672b8a92cf4f2dae131d5a01dcb219bc1f967b12b899eb88"
+          },
+          "/home/manal/Desktop/UrbanTransit-IQ/raw_data/production-v1.1/raw/trip_vehicle_assignments/part-006.csv": {
+            "bytes": 39780961,
+            "sha256": "d5660cb12f1728e11769410355fd2fe715baf7716a08699ff8e98d3bde6c7f6f"
+          },
+          "/home/manal/Desktop/UrbanTransit-IQ/raw_data/production-v1.1/raw/trip_vehicle_assignments/part-007.csv": {
+            "bytes": 39780893,
+            "sha256": "faf20032f2544891d8e22516020889d5cfa95f4829ba8ce448d57e0be575a7d6"
+          },
+          "/home/manal/Desktop/UrbanTransit-IQ/raw_data/production-v1.1/raw/trip_vehicle_assignments/part-008.csv": {
+            "bytes": 39780987,
+            "sha256": "b6d0cc885baa6b819bb7bd27e86b4b22d271c77c7afbe49f22be8303c7a6f713"
+          },
+          "/home/manal/Desktop/UrbanTransit-IQ/raw_data/production-v1.1/raw/trip_vehicle_assignments/part-009.csv": {
+            "bytes": 32465577,
+            "sha256": "c1290f47fdbc6d2594e6c9c5252105333df30123eb03c1c3584c86224d14fa2b"
+          }
+        },
+        "path": "/home/manal/Desktop/UrbanTransit-IQ/raw_data/production-v1.1/raw/trip_vehicle_assignments"
+      },
+      "crowding_threshold": {
+        "comparison": ">",
+        "ratio": 1.0,
+        "source": "existing spark_jobs.features.build_occupancy_features over_capacity definition"
+      },
+      "dataset_version": "production-v1.1",
+      "history_scope": "same route_stop_id, latest real occupancy outcome available by issue time",
+      "max_rows_total": 100000,
+      "pre_event_eligible_counts": {
+        "test": 61473,
+        "train": 368658,
+        "validation": 98297
+      },
+      "producer": "spark",
+      "same_event_target_availability_must_follow_cutoff": true,
+      "sample_counts": {
+        "test": 11633,
+        "train": 69765,
+        "validation": 18602
+      },
+      "sample_policy": "Deterministic xxhash64 selection by trip_id and stop_event_id within the original chronological split; no labels or target values were created.",
+      "sample_seed": 20260926,
+      "source_dataset_certification": "REQUIRES_REVALIDATION",
+      "source_date_ranges": {
+        "test": {
+          "max": "2026-06-30",
+          "min": "2026-04-01"
+        },
+        "train": {
+          "max": "2025-12-31",
+          "min": "2025-01-01"
+        },
+        "validation": {
+          "max": "2026-03-31",
+          "min": "2026-01-01"
+        }
+      },
+      "source_evidence_path": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-occupancy-20260928T1124Z-4c9e1f/evidence/run_id=spark-prod-v11-occupancy-20260928T1124Z-4c9e1f,hdfs://localhost:9000/urbantransit/evidence/spark-prod-v11-occupancy-resume-20260928T1245Z-7f2b91/run_id=spark-prod-v11-occupancy-20260928T1124Z-4c9e1f",
+      "source_feature_base": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-occupancy-20260928T1124Z-4c9e1f/features",
+      "source_feature_stage_evidence": {
+        "test": {
+          "elapsed_sec": null,
+          "output": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-occupancy-20260928T1124Z-4c9e1f/features/task=occupancy/split=test",
+          "rows": 407669,
+          "stage": "features_occupancy_test",
+          "status": "SUCCESS_MARKER_ONLY"
+        },
+        "train": {
+          "elapsed_sec": null,
+          "output": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-occupancy-20260928T1124Z-4c9e1f/features/task=occupancy/split=train",
+          "rows": 1644828,
+          "stage": "features_occupancy_train",
+          "status": "SUCCESS_MARKER_ONLY"
+        },
+        "validation": {
+          "elapsed_sec": 388.3612422943115,
+          "output": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-occupancy-20260928T1124Z-4c9e1f/features/task=occupancy/split=validation",
+          "rows": 406593,
+          "stage": "features_occupancy_validation",
+          "status": "SUCCEEDED"
+        }
+      },
+      "source_feature_task": "occupancy",
+      "source_quality_notice": "The handoff certificate covers package integrity and temporal checks only; the underlying production-v1.1 dataset remains REQUIRES_REVALIDATION.",
+      "source_row_counts": {
+        "test": 407669,
+        "train": 1644828,
+        "validation": 406593
+      },
+      "spark_run_id": "spark-prod-v11-occupancy-20260928T1124Z-4c9e1f"
+    },
+    "target": "target",
+    "target_definition": "Future observed onboard_departure divided by the actual positive ACTUAL departure assignment capacity_snapshot, or the existing over_capacity flag derived by the producer from that measured ratio (>1.0). The current event's load, capacity, utilization, actual departure, delay, and crowding label are targets/availability guards only and never predictors.",
+    "task_name": "crowding_risk",
+    "thresholds": {
+      "capacity_utilization_ratio": 1.0,
+      "positive_class": "strictly greater"
+    }
+  },
+  "task_name": "crowding_risk"
+}

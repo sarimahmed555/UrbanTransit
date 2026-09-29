@@ -1,0 +1,577 @@
+{
+  "acceptance": {
+    "accuracy": 0.735290571497468,
+    "macro_f1": 0.5379152468400107,
+    "passed": false,
+    "requirement": "test accuracy >= 0.85 OR macro F1 >= 0.80",
+    "status": "MEASURED"
+  },
+  "artifact_paths": {
+    "model": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/selected_spark_model",
+    "predictions": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/predictions.jsonl",
+    "result": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/result.json"
+  },
+  "baseline_metrics": {},
+  "dataset_version": "production-v1.1",
+  "engine": "spark",
+  "evidence_status": "CERTIFIED RUNTIME MEASURED; REVIEW ACCEPTANCE",
+  "feature_list": [
+    "scheduled_hour_utc",
+    "service_weekday",
+    "is_weekend",
+    "service_month",
+    "direction_id",
+    "distance_km"
+  ],
+  "feature_version": "spark-spark-prod-v11-20260928T0944Z-1a7c3f-delay_severity",
+  "input_hashes": {
+    "manifest_sha256": "21f10fd591b1cb98ac6b3f7004c2bf3260adb131ec88db32443a0ac38adb9446",
+    "partition_sha256": {
+      "test": "2bf41329fd13c3c37e147678bd54e8307d5911593e2799f46bd744fa27408fb0",
+      "train": "ccaca7f358650ad886aa126670dac3a2073ce1feb44951ff18d53fecdaa78558",
+      "validation": "ff2f499593f6a94c01a2644d67a6771f3d05b2a2f98d722edd79be823e711af4"
+    }
+  },
+  "metrics": {
+    "test": {
+      "accuracy": 0.735290571497468,
+      "averaging": "support_weighted; macro_f1 uses all declared classes",
+      "class_labels": [
+        "ON_TIME",
+        "MINOR_DELAY",
+        "MODERATE_DELAY"
+      ],
+      "confusion_matrix": [
+        [
+          23,
+          1293,
+          1394
+        ],
+        [
+          0,
+          5356,
+          891
+        ],
+        [
+          13,
+          800,
+          6818
+        ]
+      ],
+      "f1": 0.6721483189541008,
+      "macro_f1": 0.5379152468400107,
+      "per_class": [
+        {
+          "f1": 0.016751638747268753,
+          "label": "ON_TIME",
+          "precision": 0.6388888888888888,
+          "recall": 0.008487084870848708,
+          "support": 2710
+        },
+        {
+          "f1": 0.782126168224299,
+          "label": "MINOR_DELAY",
+          "precision": 0.7190226876090751,
+          "recall": 0.8573715383384024,
+          "support": 6247
+        },
+        {
+          "f1": 0.8148679335484642,
+          "label": "MODERATE_DELAY",
+          "precision": 0.7489838514775349,
+          "recall": 0.8934608832394182,
+          "support": 7631
+        }
+      ],
+      "precision": 0.7197142144325929,
+      "recall": 0.735290571497468,
+      "sample_count": 16588,
+      "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+    },
+    "validation": {
+      "accuracy": 0.7341036965333656,
+      "averaging": "support_weighted; macro_f1 uses all declared classes",
+      "class_labels": [
+        "ON_TIME",
+        "MINOR_DELAY",
+        "MODERATE_DELAY"
+      ],
+      "confusion_matrix": [
+        [
+          44,
+          1238,
+          1422
+        ],
+        [
+          0,
+          5302,
+          914
+        ],
+        [
+          12,
+          809,
+          6788
+        ]
+      ],
+      "f1": 0.6726836639696633,
+      "macro_f1": 0.5416442055695709,
+      "per_class": [
+        {
+          "f1": 0.03188405797101449,
+          "label": "ON_TIME",
+          "precision": 0.7857142857142857,
+          "recall": 0.016272189349112426,
+          "support": 2704
+        },
+        {
+          "f1": 0.7817176557316624,
+          "label": "MINOR_DELAY",
+          "precision": 0.7214587018641992,
+          "recall": 0.8529601029601029,
+          "support": 6216
+        },
+        {
+          "f1": 0.811330903006036,
+          "label": "MODERATE_DELAY",
+          "precision": 0.7439719421306444,
+          "recall": 0.8921014587987909,
+          "support": 7609
+        }
+      ],
+      "precision": 0.7423341537317057,
+      "recall": 0.7341036965333656,
+      "sample_count": 16529,
+      "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+    }
+  },
+  "model_comparison": [
+    {
+      "effective_parameters": {
+        "stage0.inputCol": "raw_features",
+        "stage0.outputCol": "features",
+        "stage0.withMean": true,
+        "stage0.withStd": true,
+        "stage1.aggregationDepth": 2,
+        "stage1.elasticNetParam": 0.0,
+        "stage1.family": "auto",
+        "stage1.featuresCol": "features",
+        "stage1.fitIntercept": true,
+        "stage1.labelCol": "label",
+        "stage1.maxBlockSizeInMB": 0.0,
+        "stage1.maxIter": 300,
+        "stage1.predictionCol": "prediction",
+        "stage1.probabilityCol": "probability",
+        "stage1.rawPredictionCol": "rawPrediction",
+        "stage1.regParam": 0.0,
+        "stage1.standardization": true,
+        "stage1.threshold": 0.5,
+        "stage1.tol": 1e-06
+      },
+      "model_name": "logistic_regression",
+      "model_type": "classification",
+      "parameters": {
+        "max_iter": 300
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 158.39530291000028,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "accuracy": 0.7321677052453264,
+        "averaging": "support_weighted; macro_f1 uses all declared classes",
+        "class_labels": [
+          "ON_TIME",
+          "MINOR_DELAY",
+          "MODERATE_DELAY"
+        ],
+        "confusion_matrix": [
+          [
+            0,
+            1238,
+            1466
+          ],
+          [
+            0,
+            5302,
+            914
+          ],
+          [
+            0,
+            809,
+            6800
+          ]
+        ],
+        "f1": 0.6668799910602178,
+        "macro_f1": 0.5305906192959453,
+        "per_class": [
+          {
+            "f1": 0.0,
+            "label": "ON_TIME",
+            "precision": 0.0,
+            "recall": 0.0,
+            "support": 2704
+          },
+          {
+            "f1": 0.7817176557316624,
+            "label": "MINOR_DELAY",
+            "precision": 0.7214587018641992,
+            "recall": 0.8529601029601029,
+            "support": 6216
+          },
+          {
+            "f1": 0.8100542021561736,
+            "label": "MODERATE_DELAY",
+            "precision": 0.7407407407407407,
+            "recall": 0.8936785385727428,
+            "support": 7609
+          }
+        ],
+        "precision": 0.6123107016204342,
+        "recall": 0.7321677052453264,
+        "sample_count": 16529,
+        "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+      }
+    },
+    {
+      "effective_parameters": {
+        "stage0.inputCol": "raw_features",
+        "stage0.outputCol": "features",
+        "stage0.withMean": true,
+        "stage0.withStd": true,
+        "stage1.cacheNodeIds": false,
+        "stage1.checkpointInterval": 10,
+        "stage1.featuresCol": "features",
+        "stage1.impurity": "gini",
+        "stage1.labelCol": "label",
+        "stage1.leafCol": "",
+        "stage1.maxBins": 32,
+        "stage1.maxDepth": 6,
+        "stage1.maxMemoryInMB": 256,
+        "stage1.minInfoGain": 0.0,
+        "stage1.minInstancesPerNode": 1,
+        "stage1.minWeightFractionPerNode": 0.0,
+        "stage1.predictionCol": "prediction",
+        "stage1.probabilityCol": "probability",
+        "stage1.rawPredictionCol": "rawPrediction",
+        "stage1.seed": 20260926
+      },
+      "model_name": "decision_tree",
+      "model_type": "classification",
+      "parameters": {
+        "max_depth": 6
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 12.625113546999728,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "accuracy": 0.7324702038840826,
+        "averaging": "support_weighted; macro_f1 uses all declared classes",
+        "class_labels": [
+          "ON_TIME",
+          "MINOR_DELAY",
+          "MODERATE_DELAY"
+        ],
+        "confusion_matrix": [
+          [
+            39,
+            1238,
+            1427
+          ],
+          [
+            4,
+            5302,
+            910
+          ],
+          [
+            34,
+            809,
+            6766
+          ]
+        ],
+        "f1": 0.6713133444111188,
+        "macro_f1": 0.5398275629622626,
+        "per_class": [
+          {
+            "f1": 0.02804746494066883,
+            "label": "ON_TIME",
+            "precision": 0.5064935064935064,
+            "recall": 0.014423076923076924,
+            "support": 2704
+          },
+          {
+            "f1": 0.7817176557316624,
+            "label": "MINOR_DELAY",
+            "precision": 0.7214587018641992,
+            "recall": 0.8529601029601029,
+            "support": 6216
+          },
+          {
+            "f1": 0.8097175682144567,
+            "label": "MODERATE_DELAY",
+            "precision": 0.7432714489728661,
+            "recall": 0.8892101458798791,
+            "support": 7609
+          }
+        ],
+        "precision": 0.6963336068474102,
+        "recall": 0.7324702038840826,
+        "sample_count": 16529,
+        "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+      }
+    },
+    {
+      "effective_parameters": {
+        "stage0.inputCol": "raw_features",
+        "stage0.outputCol": "features",
+        "stage0.withMean": true,
+        "stage0.withStd": true,
+        "stage1.bootstrap": true,
+        "stage1.cacheNodeIds": false,
+        "stage1.checkpointInterval": 10,
+        "stage1.featureSubsetStrategy": "auto",
+        "stage1.featuresCol": "features",
+        "stage1.impurity": "gini",
+        "stage1.labelCol": "label",
+        "stage1.leafCol": "",
+        "stage1.maxBins": 32,
+        "stage1.maxDepth": 8,
+        "stage1.maxMemoryInMB": 256,
+        "stage1.minInfoGain": 0.0,
+        "stage1.minInstancesPerNode": 1,
+        "stage1.minWeightFractionPerNode": 0.0,
+        "stage1.numTrees": 80,
+        "stage1.predictionCol": "prediction",
+        "stage1.probabilityCol": "probability",
+        "stage1.rawPredictionCol": "rawPrediction",
+        "stage1.seed": 20260926,
+        "stage1.subsamplingRate": 1.0
+      },
+      "model_name": "random_forest",
+      "model_type": "classification",
+      "parameters": {
+        "max_depth": 8,
+        "n_estimators": 80
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 22.030289170999822,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "accuracy": 0.7341036965333656,
+        "averaging": "support_weighted; macro_f1 uses all declared classes",
+        "class_labels": [
+          "ON_TIME",
+          "MINOR_DELAY",
+          "MODERATE_DELAY"
+        ],
+        "confusion_matrix": [
+          [
+            44,
+            1238,
+            1422
+          ],
+          [
+            0,
+            5302,
+            914
+          ],
+          [
+            12,
+            809,
+            6788
+          ]
+        ],
+        "f1": 0.6726836639696633,
+        "macro_f1": 0.5416442055695709,
+        "per_class": [
+          {
+            "f1": 0.03188405797101449,
+            "label": "ON_TIME",
+            "precision": 0.7857142857142857,
+            "recall": 0.016272189349112426,
+            "support": 2704
+          },
+          {
+            "f1": 0.7817176557316624,
+            "label": "MINOR_DELAY",
+            "precision": 0.7214587018641992,
+            "recall": 0.8529601029601029,
+            "support": 6216
+          },
+          {
+            "f1": 0.811330903006036,
+            "label": "MODERATE_DELAY",
+            "precision": 0.7439719421306444,
+            "recall": 0.8921014587987909,
+            "support": 7609
+          }
+        ],
+        "precision": 0.7423341537317057,
+        "recall": 0.7341036965333656,
+        "sample_count": 16529,
+        "zero_division_policy": "0 for undefined per-class precision/recall/F1"
+      }
+    }
+  ],
+  "model_name": "random_forest",
+  "model_type": "classification",
+  "parameters": {
+    "stage0.inputCol": "raw_features",
+    "stage0.outputCol": "features",
+    "stage0.withMean": true,
+    "stage0.withStd": true,
+    "stage1.bootstrap": true,
+    "stage1.cacheNodeIds": false,
+    "stage1.checkpointInterval": 10,
+    "stage1.featureSubsetStrategy": "auto",
+    "stage1.featuresCol": "features",
+    "stage1.impurity": "gini",
+    "stage1.labelCol": "label",
+    "stage1.leafCol": "",
+    "stage1.maxBins": 32,
+    "stage1.maxDepth": 8,
+    "stage1.maxMemoryInMB": 256,
+    "stage1.minInfoGain": 0.0,
+    "stage1.minInstancesPerNode": 1,
+    "stage1.minWeightFractionPerNode": 0.0,
+    "stage1.numTrees": 80,
+    "stage1.predictionCol": "prediction",
+    "stage1.probabilityCol": "probability",
+    "stage1.rawPredictionCol": "rawPrediction",
+    "stage1.seed": 20260926,
+    "stage1.subsamplingRate": 1.0
+  },
+  "periods": {
+    "test": {
+      "end": "2026-06-30",
+      "start": "2026-04-01"
+    },
+    "train": {
+      "end": "2025-12-31",
+      "start": "2025-01-01"
+    },
+    "validation": {
+      "end": "2026-03-31",
+      "start": "2026-01-01"
+    }
+  },
+  "random_seed": 20260926,
+  "reproducibility": {
+    "command": [
+      "/home/manal/Desktop/UrbanTransit-IQ/ml_execution/__main__.py",
+      "--engine",
+      "spark",
+      "--manifest",
+      "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_handoffs/spark-delay-severity-prod-v11-20260928T1610Z/manifest.json",
+      "--output",
+      "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z"
+    ],
+    "created_at_utc": "2026-09-28T11:02:18.865204+00:00",
+    "libraries": {
+      "numpy": "1.26.4",
+      "pyspark": null,
+      "scikit-learn": "1.7.2"
+    },
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "source_sha256": {
+      "ml_execution/__init__.py": "a4c084b9908f2c28c9836e5a2e74adb5ebb07d3727f0faeb280f9f7f7642d711",
+      "ml_execution/__main__.py": "779f9ba5b96ee8f5a3abb8a050a4d0b452bcf0e74e258f86bd444b5f8ec98817",
+      "ml_execution/analytics.py": "91d348317fad956e6bd61552650de521946ef621058456f03cac921b4b8f423a",
+      "ml_execution/contracts.py": "a6d2ada926990f648d2a74da420f14fb8937f2ecc5961d9e882041ac29b174a1",
+      "ml_execution/handoff.py": "8f1618d11e2e5db46e0ff869680cbf90635cc9d6f900343c32d986271b2101b9",
+      "ml_execution/metrics.py": "86f19bed1d6b8ef063efd7b2eebbe08fd4fc7c769c85ae2ae850b8ddec869b86",
+      "ml_execution/models.py": "180bdc96ee7c41a1d3def7ed0afaf5075f4d4cef948106e1bcbe3a5c175f9f17",
+      "ml_execution/results.py": "6c9ea771fed00933f08048fe978ede4d0bea68a304f1962de426827eaf517b99",
+      "ml_execution/runner.py": "8343efd23540dbacfba75dad439e74e6ec76adbd221074a282cfc9beb422ab15",
+      "python_pipeline/splits.py": "461ee6c9e84bcfcfb6223b4d57409b53366260b6eec78c6262f281848524af25"
+    },
+    "spark_conf": {
+      "spark.default.parallelism": null,
+      "spark.master": "local[2]",
+      "spark.sql.shuffle.partitions": "16"
+    },
+    "spark_version": "3.5.0",
+    "thread_environment": {
+      "MKL_NUM_THREADS": null,
+      "OMP_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null
+    }
+  },
+  "runtime_sec": 215.07721696700037,
+  "sample_counts": {
+    "test": 16588,
+    "train": 66883,
+    "validation": 16529
+  },
+  "schema_version": "1.0",
+  "selected_model": "random_forest",
+  "selection_metric": "macro_f1",
+  "selection_rationale": "Best measured validation macro_f1=0.5416442055695709; alphabetical tie-break; test excluded from selection",
+  "status": "SUCCEEDED",
+  "task_contract": {
+    "certification": {
+      "evidence_path": "feature_certification.json",
+      "scope": "bounded ML handoff integrity and temporal-contract validation only",
+      "status": "CERTIFIED"
+    },
+    "class_labels": [
+      "ON_TIME",
+      "MINOR_DELAY",
+      "MODERATE_DELAY"
+    ],
+    "dataset_version": "production-v1.1",
+    "feature_version": "spark-spark-prod-v11-20260928T0944Z-1a7c3f-delay_severity",
+    "features": [
+      "scheduled_hour_utc",
+      "service_weekday",
+      "is_weekend",
+      "service_month",
+      "direction_id",
+      "distance_km"
+    ],
+    "grain": "one observed trip stop event from completed Spark task output",
+    "producer": "spark",
+    "schema_version": "1.0",
+    "source_provenance": {
+      "dataset_version": "production-v1.1",
+      "eligible_row_counts": {
+        "test": 114623,
+        "train": 462192,
+        "validation": 114215
+      },
+      "max_rows": 100000,
+      "producer": "spark",
+      "sample_policy": "Deterministic Spark xxhash64 ranking of trip_id and stop_event_id within source label and chronological split; proportional split and class allocation; no label resynthesis or feature calculation.",
+      "sample_seed": 20260926,
+      "source_dataset_certification": "REQUIRES_REVALIDATION",
+      "source_evidence_path": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-20260928T0944Z-1a7c3f/evidence/run_id=spark-prod-v11-20260928T0944Z-1a7c3f/events-33",
+      "source_feature_base": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-20260928T0944Z-1a7c3f/features",
+      "source_quality_notice": "This attestation does not certify the underlying production dataset or override its REQUIRES_REVALIDATION status.",
+      "source_row_counts": {
+        "test": 407669,
+        "train": 1644828,
+        "validation": 406593
+      },
+      "spark_run_id": "spark-prod-v11-20260928T0944Z-1a7c3f",
+      "unsupported_source_labels": [
+        "MAJOR_DELAY",
+        "SEVERE_DELAY"
+      ]
+    },
+    "target": "target",
+    "target_definition": "Existing Spark delay_severity output; labels encoded by declared class index without changing the upstream label. Target is the instantaneous scheduled departure event. Thresholds are the source run's 60, 300, 600, and 1800 seconds. Only labels with eligible observations in all three splits are modeled; unsupported output labels are listed explicitly.",
+    "task_name": "delay_severity",
+    "thresholds": {
+      "delay_seconds": [
+        60.0,
+        300.0,
+        600.0,
+        1800.0
+      ]
+    },
+    "unsupported_source_labels": [
+      "MAJOR_DELAY",
+      "SEVERE_DELAY"
+    ]
+  },
+  "task_name": "delay_severity"
+}

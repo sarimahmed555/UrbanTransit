@@ -1,0 +1,403 @@
+{
+  "checked_at": "2026-09-28T17:45:59.802387+00:00",
+  "runs": [
+    {
+      "metrics_recomputed_from_predictions": true,
+      "validation_only_model_selection_verified": true,
+      "test_metrics_used_for_selection": false,
+      "owner_marker_hash_verified": true,
+      "result": "reports/ml_runs/python-crowding-recovery-20260928-a/result.json",
+      "status": "SUCCEEDED",
+      "task": "crowding_risk",
+      "manifest": "reports/ml_handoffs/python-occupancy-recovery-20260928-a/crowding_risk/manifest.json",
+      "input_hashes_verified": true,
+      "artifact_sha256": {
+        "model": {
+          "reports/ml_runs/python-crowding-recovery-20260928-a/selected_model.pkl": "de93d3c35c4ba2236432fd6ccdeb0b0d4f9ee186fed8032903c0937603dfdc57"
+        },
+        "predictions": {
+          "reports/ml_runs/python-crowding-recovery-20260928-a/predictions.jsonl": "a5e0e8306b5d0711459c7f2a17a2ed35ff75f76ae240097216f54947ce1d3240"
+        },
+        "result": {
+          "reports/ml_runs/python-crowding-recovery-20260928-a/result.json": "6aeca427bcaa8288c90bb17ff7d23b8581cb848e27f1a263b835aa56b1c63681"
+        }
+      },
+      "prediction_counts": {
+        "validation": 18397,
+        "test": 11587
+      },
+      "reload_prediction_parity_cases_per_split": 64
+    },
+    {
+      "metrics_recomputed_from_predictions": true,
+      "validation_only_model_selection_verified": true,
+      "test_metrics_used_for_selection": false,
+      "owner_marker_hash_verified": true,
+      "result": "reports/ml_runs/python-delay-severity-prod-v11-20260928T2030Z/result.json",
+      "status": "SUCCEEDED",
+      "task": "delay_severity",
+      "manifest": "reports/ml_handoffs/python-delay-severity-prod-v11-20260928T1935Z/manifest.json",
+      "input_hashes_verified": true,
+      "artifact_sha256": {
+        "model": {
+          "reports/ml_runs/python-delay-severity-prod-v11-20260928T2030Z/selected_model.pkl": "1037310f43eb62ce70b772c76134eeb1a4374b671991c195cbf74ee12be56de4"
+        },
+        "predictions": {
+          "reports/ml_runs/python-delay-severity-prod-v11-20260928T2030Z/predictions.jsonl": "adb3b1921e200a93fa320b45d78a1b61c612105112f900bd096d8be1d58452bd"
+        },
+        "result": {
+          "reports/ml_runs/python-delay-severity-prod-v11-20260928T2030Z/result.json": "4ce60b14cfec3cf925bedee64d3cc965e88240a118a0db821695c82bd26d9658"
+        }
+      },
+      "prediction_counts": {
+        "validation": 16529,
+        "test": 16588
+      },
+      "reload_prediction_parity_cases_per_split": 64
+    },
+    {
+      "metrics_recomputed_from_predictions": true,
+      "validation_only_model_selection_verified": true,
+      "test_metrics_used_for_selection": false,
+      "owner_marker_hash_verified": true,
+      "result": "reports/ml_runs/python-occupancy-recovery-20260928-a/result.json",
+      "status": "SUCCEEDED",
+      "task": "occupancy_forecast",
+      "manifest": "reports/ml_handoffs/python-occupancy-recovery-20260928-a/occupancy_forecast/manifest.json",
+      "input_hashes_verified": true,
+      "artifact_sha256": {
+        "model": {
+          "reports/ml_runs/python-occupancy-recovery-20260928-a/selected_model.pkl": "ca0dab7ebdf9ac9b466ae307023397aad9dd87abe03c9c1dd94c3dce7bc184be"
+        },
+        "predictions": {
+          "reports/ml_runs/python-occupancy-recovery-20260928-a/predictions.jsonl": "a2dc3a74ae175cb257858805def9a2694474dd3a64d4d53947fc48f793f22361"
+        },
+        "result": {
+          "reports/ml_runs/python-occupancy-recovery-20260928-a/result.json": "4b9235d703d3c459a290b956bbfd9b6cd61687f7ea2cb48b885f34b124b2c06a"
+        }
+      },
+      "prediction_counts": {
+        "validation": 18397,
+        "test": 11587
+      },
+      "reload_prediction_parity_cases_per_split": 64
+    },
+    {
+      "metrics_recomputed_from_predictions": true,
+      "validation_only_model_selection_verified": true,
+      "test_metrics_used_for_selection": false,
+      "owner_marker_hash_verified": true,
+      "result": "reports/ml_runs/python-passenger-demand-prod-v11-20260928T2110Z/result.json",
+      "status": "SUCCEEDED",
+      "task": "passenger_demand",
+      "manifest": "reports/ml_handoffs/python-demand-prod-v11-20260928T2010Z/manifest.json",
+      "input_hashes_verified": true,
+      "artifact_sha256": {
+        "model": {
+          "reports/ml_runs/python-passenger-demand-prod-v11-20260928T2110Z/selected_model.pkl": "940b5114a7736270bc58e0bf1f5e3d3243cce6bd6bdc19d62974b278ae5da620"
+        },
+        "predictions": {
+          "reports/ml_runs/python-passenger-demand-prod-v11-20260928T2110Z/predictions.jsonl": "5bc6277590ca90f345317823b9ed2410dee6310e9a50c7539da8a58478f46255"
+        },
+        "result": {
+          "reports/ml_runs/python-passenger-demand-prod-v11-20260928T2110Z/result.json": "d8a4adbed585d786ac033a6f63ed5707bbb390cd14c5e32c465b350253418150"
+        }
+      },
+      "prediction_counts": {
+        "validation": 16755,
+        "test": 16767
+      },
+      "reload_prediction_parity_cases_per_split": 64
+    },
+    {
+      "metrics_recomputed_from_predictions": true,
+      "validation_only_model_selection_verified": true,
+      "test_metrics_used_for_selection": false,
+      "owner_marker_hash_verified": true,
+      "result": "reports/ml_runs/python-route-clustering-prod-v11-20260928T2210Z/result.json",
+      "status": "SUCCEEDED",
+      "task": "route_clustering",
+      "manifest": "reports/ml_handoffs/python-route-clustering-prod-v11-20260928T2210Z/manifest.json",
+      "input_hashes_verified": true,
+      "artifact_sha256": {
+        "cluster_interpretation": {
+          "reports/ml_runs/python-route-clustering-prod-v11-20260928T2210Z/cluster_interpretation.json": "8f8d8c88b70b74c53a6bcbbb76d97386f283db90f2bf090a33500de49c06a583"
+        },
+        "model": {
+          "reports/ml_runs/python-route-clustering-prod-v11-20260928T2210Z/selected_model.pkl": "f950a7f76b93f801bd81a9a7230dee4fcb5721bb749eb790bbbf77f199f6170b"
+        },
+        "predictions": {
+          "reports/ml_runs/python-route-clustering-prod-v11-20260928T2210Z/predictions.jsonl": "f0ef74a93574f2ac1902b84808ffec06108c1224933bab9908c4c76b344e2233"
+        },
+        "result": {
+          "reports/ml_runs/python-route-clustering-prod-v11-20260928T2210Z/result.json": "0f25f2908ef04113415667a687153121500feecf299c531a6d162c776c270197"
+        }
+      },
+      "prediction_counts": {
+        "validation": 110,
+        "test": 120
+      },
+      "reload_prediction_parity_cases_per_split": 64
+    },
+    {
+      "metrics_recomputed_from_predictions": true,
+      "validation_only_model_selection_verified": true,
+      "test_metrics_used_for_selection": false,
+      "owner_marker_hash_verified": false,
+      "result": "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/result.json",
+      "status": "SUCCEEDED",
+      "task": "crowding_risk",
+      "manifest": "reports/ml_handoffs/spark-occupancy-asof-prod-v11-20260928T1740Z/crowding_risk/manifest.json",
+      "input_hashes_verified": true,
+      "artifact_sha256": {
+        "model": {
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/metadata/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/metadata/.part-00000.crc": "1b8cda063d77a1d63079b62763753f3aa1817cb03a40e491121170bc756b277f",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/metadata/part-00000": "a538628419ea87feea9811a46ac0d21e391dabca5091ffe0ae5eb46273c03a65",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/0_StandardScaler_9c9672918d6c/data/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/0_StandardScaler_9c9672918d6c/data/.part-00000-af9e9ed0-baba-4b72-9b3b-c28ff8a432f9-c000.snappy.parquet.crc": "89ea94670756163881e550362ed40deeb6019f8e77e5e2f8fd0b5e76efe5da5b",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/0_StandardScaler_9c9672918d6c/data/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/0_StandardScaler_9c9672918d6c/data/part-00000-af9e9ed0-baba-4b72-9b3b-c28ff8a432f9-c000.snappy.parquet": "16ab48e264743562b655b509ece653feab5895a5057b74640f241e9ce598bbe2",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/0_StandardScaler_9c9672918d6c/metadata/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/0_StandardScaler_9c9672918d6c/metadata/.part-00000.crc": "9f8df1dcaeb5b8a688346102ac403d7991af14db4de98859c236a8b57d4b2905",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/0_StandardScaler_9c9672918d6c/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/0_StandardScaler_9c9672918d6c/metadata/part-00000": "9d2bcac091e3e00a3529cf91740e65982b8297470a47bf5efc10c508faa22909",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/1_LogisticRegression_2af3e1592485/data/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/1_LogisticRegression_2af3e1592485/data/.part-00000-4f10ae91-f5e8-4664-9467-81c00234b796-c000.snappy.parquet.crc": "f6734a10a371c2345b5b6272a329736add6c29c36e011091a8d1882e1365a451",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/1_LogisticRegression_2af3e1592485/data/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/1_LogisticRegression_2af3e1592485/data/part-00000-4f10ae91-f5e8-4664-9467-81c00234b796-c000.snappy.parquet": "a994a2fda3df2d93ef679c237754d20b322c35a4e84fb952427bef99baf4c61d",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/1_LogisticRegression_2af3e1592485/metadata/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/1_LogisticRegression_2af3e1592485/metadata/.part-00000.crc": "d8cfaf942730f37061f069811fb1dd559af9c3742dfa2e325e9e5512796f876e",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/1_LogisticRegression_2af3e1592485/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/selected_spark_model/stages/1_LogisticRegression_2af3e1592485/metadata/part-00000": "3cad67c11b3a78223f723d37e9807b2ddb4ae02721cc55f4af71d6a289ba68af"
+        },
+        "predictions": {
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/predictions.jsonl": "d77f2de872c11ad372a3652bedf6e064cec1a51692e5e5bdb3b6944a524be3b1"
+        },
+        "result": {
+          "reports/ml_runs/spark-crowding-risk-prod-v11-20260928T1810Z/result.json": "8a9a927c42654fe50556f9b675342ea2f078fb7db2ba64510698ffd46bf54aca"
+        }
+      },
+      "prediction_counts": {
+        "validation": 18602,
+        "test": 11633
+      }
+    },
+    {
+      "metrics_recomputed_from_predictions": true,
+      "validation_only_model_selection_verified": true,
+      "test_metrics_used_for_selection": false,
+      "owner_marker_hash_verified": false,
+      "result": "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/result.json",
+      "status": "SUCCEEDED",
+      "task": "delay_severity",
+      "manifest": "reports/ml_handoffs/spark-delay-severity-prod-v11-20260928T1610Z/manifest.json",
+      "input_hashes_verified": true,
+      "artifact_sha256": {
+        "model": {
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/selected_spark_model/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/selected_spark_model/metadata/part-00000": "6e5208691df3a8c8470a924442bc2450271a4fc79d36798591f36424aab51ffe",
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/selected_spark_model/stages/0_StandardScaler_2d01db03f570/data/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/selected_spark_model/stages/0_StandardScaler_2d01db03f570/data/part-00000-fc6f86ef-7ffd-47d7-8500-7ca42ba69140-c000.snappy.parquet": "3a400eab8e5f021fb26bffd8cfafe58c9824ce50b5f03c4eb779093ebfe1741c",
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/selected_spark_model/stages/0_StandardScaler_2d01db03f570/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/selected_spark_model/stages/0_StandardScaler_2d01db03f570/metadata/part-00000": "4e897ec4328573b7d3e3efb7b42dbaaf48f311adf017df9721cf5547070ddf9d",
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/selected_spark_model/stages/1_RandomForestClassifier_db943ed74611/data/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/selected_spark_model/stages/1_RandomForestClassifier_db943ed74611/data/part-00000-a76cc3d4-7162-4954-87ff-34e12eb9b79b-c000.snappy.parquet": "8c7baa96514ba31a234ddb15a667da8ed0b5d31ec30a35c166d3b0c51f4e89cc",
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/selected_spark_model/stages/1_RandomForestClassifier_db943ed74611/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/selected_spark_model/stages/1_RandomForestClassifier_db943ed74611/metadata/part-00000": "0d88d35759bff28ea929271414daf0def9e622e2f0af1186df5c1c41389e5c24",
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/selected_spark_model/stages/1_RandomForestClassifier_db943ed74611/treesMetadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/selected_spark_model/stages/1_RandomForestClassifier_db943ed74611/treesMetadata/part-00000-c1b64525-b840-490f-8f97-6924f8ce7fab-c000.snappy.parquet": "907d3ae8816db711bcba148c9b11885cea4519d8bf63552741766ad572fd3c17"
+        },
+        "predictions": {
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/predictions.jsonl": "1630830b2190cb480d39c6d5b90984c5f50a0730b7fbc50c353e5af0f6cb73fc"
+        },
+        "result": {
+          "reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/result.json": "6ed7d0fc3eb7203077ea8c3ad07ac6da98b74ddd2e72481bbbbaa19b1ef4bc04"
+        }
+      },
+      "prediction_counts": {
+        "validation": 16529,
+        "test": 16588
+      }
+    },
+    {
+      "metrics_recomputed_from_predictions": true,
+      "validation_only_model_selection_verified": true,
+      "test_metrics_used_for_selection": false,
+      "owner_marker_hash_verified": false,
+      "result": "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/result.json",
+      "status": "SUCCEEDED",
+      "task": "occupancy_forecast",
+      "manifest": "reports/ml_handoffs/spark-occupancy-asof-prod-v11-20260928T1740Z/occupancy_forecast/manifest.json",
+      "input_hashes_verified": true,
+      "artifact_sha256": {
+        "model": {
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/metadata/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/metadata/.part-00000.crc": "1eefd0910d73f06be185e2fdde379a3bcf2beb5041e0e70200c8caacf38ea5c9",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/metadata/part-00000": "c516b4c66b355ec20988e2771cbe50eb15da7a332c58336dc686495d18f6835c",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/0_StandardScaler_0669efd045b8/data/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/0_StandardScaler_0669efd045b8/data/.part-00000-82b94ad9-13d3-4fa3-abb3-204187ac61ac-c000.snappy.parquet.crc": "bfee4e944f7392f73e88f1c40078e63f2ba301e515745a042d64cb3101f96721",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/0_StandardScaler_0669efd045b8/data/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/0_StandardScaler_0669efd045b8/data/part-00000-82b94ad9-13d3-4fa3-abb3-204187ac61ac-c000.snappy.parquet": "9a3dbd685fcdd1cea30e437a68824e61ce5405994c6ab8414d57272cb94abb88",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/0_StandardScaler_0669efd045b8/metadata/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/0_StandardScaler_0669efd045b8/metadata/.part-00000.crc": "5bbc9bca43ba32e74c5f47ce71fd06d4d11d93dcf261ff997e7b81916bcb4a4e",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/0_StandardScaler_0669efd045b8/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/0_StandardScaler_0669efd045b8/metadata/part-00000": "78457d9478109507158f274c33d254a17253b19d4c50b7f9592e7db9dce7f9e0",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/1_DecisionTreeRegressor_e458e0ba0f42/data/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/1_DecisionTreeRegressor_e458e0ba0f42/data/.part-00000-5aeca149-68c3-4b26-88cf-28587f0f67ea-c000.snappy.parquet.crc": "db1dc8f2d8d32fe6883b47419a177684cd40e69702ef446e6918ccb0e1174337",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/1_DecisionTreeRegressor_e458e0ba0f42/data/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/1_DecisionTreeRegressor_e458e0ba0f42/data/part-00000-5aeca149-68c3-4b26-88cf-28587f0f67ea-c000.snappy.parquet": "9d3958b38a247dffa2e7c357db2a4aceee521d2c8036bd95d3dfcaf54fcdeb55",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/1_DecisionTreeRegressor_e458e0ba0f42/metadata/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/1_DecisionTreeRegressor_e458e0ba0f42/metadata/.part-00000.crc": "c57f0fa8c947803289d0e01e9dadaed70265017346a4dde55e4f220147c12174",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/1_DecisionTreeRegressor_e458e0ba0f42/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/selected_spark_model/stages/1_DecisionTreeRegressor_e458e0ba0f42/metadata/part-00000": "51acfa0e567da6a4576dda6c9b8ca227cb08c3d17f0e904af352200314d135a3"
+        },
+        "predictions": {
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/predictions.jsonl": "ab709d23c699b3c6b66461a89bae42b06c4c5360ccb3980270d12c1d5340fa0b"
+        },
+        "result": {
+          "reports/ml_runs/spark-occupancy-forecast-prod-v11-20260928T1800Z/result.json": "bbbc1651c14e80ea4604bba33e7ce0d03975ef0e096d81483f5c076372965d0c"
+        }
+      },
+      "prediction_counts": {
+        "validation": 18602,
+        "test": 11633
+      }
+    },
+    {
+      "metrics_recomputed_from_predictions": true,
+      "validation_only_model_selection_verified": true,
+      "test_metrics_used_for_selection": false,
+      "owner_marker_hash_verified": false,
+      "result": "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/result.json",
+      "status": "SUCCEEDED",
+      "task": "passenger_demand",
+      "manifest": "reports/ml_handoffs/spark-demand-forecast-prod-v11-20260928T1650Z/manifest.json",
+      "input_hashes_verified": true,
+      "artifact_sha256": {
+        "model": {
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/metadata/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/metadata/.part-00000.crc": "713b70fb47675751c598da0589ea2c565d760110c80f5e354eb5c769cacde11e",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/metadata/part-00000": "7297c3d11d9f73e190fba32dec927e3d195c6f9adba6b675e6d69d39122e1873",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/0_StandardScaler_a5874e562880/data/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/0_StandardScaler_a5874e562880/data/.part-00000-bb13c362-4bfb-43f3-959c-5a57d327740c-c000.snappy.parquet.crc": "795cfea19a111c6d85fb40d3652f3c2d10203d7b32012ce10c671538f6cd231d",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/0_StandardScaler_a5874e562880/data/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/0_StandardScaler_a5874e562880/data/part-00000-bb13c362-4bfb-43f3-959c-5a57d327740c-c000.snappy.parquet": "b7b65d7dcacfe9543a94369d12fbded112e8f6265a93bed9e3ec05cac4c02eb9",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/0_StandardScaler_a5874e562880/metadata/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/0_StandardScaler_a5874e562880/metadata/.part-00000.crc": "dfcb761f74861506daeda2508c0fa7e0fda766ae5f77901f28dff5c466e75f65",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/0_StandardScaler_a5874e562880/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/0_StandardScaler_a5874e562880/metadata/part-00000": "aa3223625a52ea4f74596ee221747661c102b57edb3b0b31cecc44eeffcdf9c9",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/1_RandomForestRegressor_d006694b898f/data/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/1_RandomForestRegressor_d006694b898f/data/.part-00000-1c577351-7e74-4972-a42f-b434a09acea3-c000.snappy.parquet.crc": "5860d0ca309aa8e32d346b91f8d352b9566917224209e74388cf99d2c5c0a649",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/1_RandomForestRegressor_d006694b898f/data/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/1_RandomForestRegressor_d006694b898f/data/part-00000-1c577351-7e74-4972-a42f-b434a09acea3-c000.snappy.parquet": "e2d880ec0cccfec2ca81476659880096a1ed3533b0821c5a041be3a02bcb7815",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/1_RandomForestRegressor_d006694b898f/metadata/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/1_RandomForestRegressor_d006694b898f/metadata/.part-00000.crc": "17f49d9d9051528d03f253367c8786a5ff1281ca0403a4f0eb71dbcc262e2792",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/1_RandomForestRegressor_d006694b898f/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/1_RandomForestRegressor_d006694b898f/metadata/part-00000": "f472aab80a634caf93695b3a29431d70cf350888a0a737c3a01e13b18b7ec290",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/1_RandomForestRegressor_d006694b898f/treesMetadata/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/1_RandomForestRegressor_d006694b898f/treesMetadata/.part-00000-6df8ffb2-c063-47ea-ba48-20f346c42415-c000.snappy.parquet.crc": "63096654db037f0c4d6be4423f4e55a52d80bffa6215868b514ce8db63d5121b",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/1_RandomForestRegressor_d006694b898f/treesMetadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model/stages/1_RandomForestRegressor_d006694b898f/treesMetadata/part-00000-6df8ffb2-c063-47ea-ba48-20f346c42415-c000.snappy.parquet": "fe10b377f8e34964af6de2ec6ddc580ffb06fe80fc2abdec5a1833eff5885557"
+        },
+        "predictions": {
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/predictions.jsonl": "da80b505acdcea3f1f925986115c4dff268576462dbaa0d27abbae49c92d09ec"
+        },
+        "result": {
+          "reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/result.json": "d62293edbd79b1e06e06ae27c7ae9a0b4c600b66d41d37d65c1a3a262a6fcc5c"
+        }
+      },
+      "prediction_counts": {
+        "validation": 16755,
+        "test": 16767
+      }
+    },
+    {
+      "metrics_recomputed_from_predictions": true,
+      "validation_only_model_selection_verified": true,
+      "test_metrics_used_for_selection": false,
+      "owner_marker_hash_verified": false,
+      "result": "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/result.json",
+      "status": "SUCCEEDED",
+      "task": "route_clustering",
+      "manifest": "reports/ml_handoffs/spark-route-clustering-temporal-prod-v11-20260928T1830Z/manifest.json",
+      "input_hashes_verified": true,
+      "artifact_sha256": {
+        "cluster_interpretation": {
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/cluster_interpretation.json": "07abc340803ded47f74980c8846102efbb09009889d6df6ac68ea33550f74209"
+        },
+        "model": {
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/metadata/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/metadata/.part-00000.crc": "edbb95de2788d40cf9a5911c8dd7140475640c5f302e26a9fa9834a8066b5a59",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/metadata/part-00000": "49048b16a24619bb0ec539fe4f869cf1580ec707aeb69a476c791ec98eaced3f",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/0_StandardScaler_7880970f4a46/data/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/0_StandardScaler_7880970f4a46/data/.part-00000-37881438-fdc1-435d-84a9-7e2b50d37cbf-c000.snappy.parquet.crc": "ae69fd1dc72b7b07d14629336e894fe7726286c0362f6eaf46e26cb7789ddf82",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/0_StandardScaler_7880970f4a46/data/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/0_StandardScaler_7880970f4a46/data/part-00000-37881438-fdc1-435d-84a9-7e2b50d37cbf-c000.snappy.parquet": "9f881bf942b578a36a91c756c86c722b3d753de14e264f2e8601b1a5d30508c0",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/0_StandardScaler_7880970f4a46/metadata/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/0_StandardScaler_7880970f4a46/metadata/.part-00000.crc": "2c0fd53fdf2c2c6bb23fe134b4238e459c74c109767f919c629cab395e1b53c4",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/0_StandardScaler_7880970f4a46/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/0_StandardScaler_7880970f4a46/metadata/part-00000": "3790bba231af4f79b0559774bba487c7fd24e5b523d2842c406790ced9e8a258",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/1_KMeans_d964dada07e7/data/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/1_KMeans_d964dada07e7/data/.part-00000-5fe4a2e9-6311-41ea-9fe1-5b387ef7cf1c-c000.snappy.parquet.crc": "2e0dc1a48b951cea984c7ce70de2ad3898073e5d0024055a9e3e1e8e6108dbac",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/1_KMeans_d964dada07e7/data/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/1_KMeans_d964dada07e7/data/part-00000-5fe4a2e9-6311-41ea-9fe1-5b387ef7cf1c-c000.snappy.parquet": "408598a8015ba9319b16b4996350f60740d49121cabd182f730539261fe246e2",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/1_KMeans_d964dada07e7/metadata/._SUCCESS.crc": "1d44f510ec2ed7595badbec80583316defc14e8dd89130d719724149adfaa07d",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/1_KMeans_d964dada07e7/metadata/.part-00000.crc": "c147af462611f51d3763259627079fdadc048dbe7140c38eb84c4b650211f993",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/1_KMeans_d964dada07e7/metadata/_SUCCESS": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model/stages/1_KMeans_d964dada07e7/metadata/part-00000": "1b1153de888896587274a2c8fee899c4d780886576ad69c48c79b9d497747a66"
+        },
+        "predictions": {
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/predictions.jsonl": "03bc1822b19d00abdc7eb0bfaf7db7f3b021878e7f5785ad30b7872523c55d21"
+        },
+        "result": {
+          "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/result.json": "4df8a700f4b0bde24d0c4051be36df9e064971b17df12ba4ef9c218392a52142"
+        }
+      },
+      "prediction_counts": {
+        "validation": 110,
+        "test": 120
+      }
+    }
+  ],
+  "notebooks": [
+    {
+      "path": "notebooks/02_python_ml_evaluation.ipynb",
+      "sha256": "21aa58333654e02847ac89f933e0422763cde7334430c5d176ca64dc3c20ba04",
+      "code_cells": 10,
+      "executed_cells": 10,
+      "error_outputs": 0
+    },
+    {
+      "path": "notebooks/01_eda_feature_engineering.ipynb",
+      "sha256": "c8dca0856c77c7b93ec4aff19d2f815c509cdc1b843f566772fefa5d6a94332a",
+      "code_cells": 5,
+      "executed_cells": 5,
+      "error_outputs": 0
+    }
+  ],
+  "comparisons": [
+    {
+      "path": "reports/ml_comparisons/stage=spark_python_comparison/dataset=production-v1.1/run=python-delay-v11-20260928T2045Z/comparison.json",
+      "sha256": "359c24061380a03d350359734fe76e1ea586329fcd428a11807b538794735926",
+      "status": "NOT_READY",
+      "cases": 0
+    },
+    {
+      "path": "reports/ml_comparisons/stage=spark_python_comparison/dataset=production-v1.1/run=python-delay-v11-normalized-20260928T2100Z/comparison.json",
+      "sha256": "2d308614b8b573202b7be6ab477c85d6c968e81f9b64e67b90ed7449c301ea25",
+      "status": "SUCCEEDED",
+      "cases": 2429,
+      "source_hashes_verified": true,
+      "truths_matched_count": 2429,
+      "prediction_agreements": 2422,
+      "prediction_disagreements": 7,
+      "agreement_rate": 0.9971181556195965,
+      "case_bundle_hash_verified": true
+    }
+  ]
+}

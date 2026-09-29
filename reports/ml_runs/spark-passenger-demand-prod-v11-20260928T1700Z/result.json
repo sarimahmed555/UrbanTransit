@@ -1,0 +1,403 @@
+{
+  "acceptance": {
+    "passed": true,
+    "requirement": "Strict test MAE improvement over documented historical-lag baseline",
+    "status": "MEASURED"
+  },
+  "artifact_paths": {
+    "model": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/selected_spark_model",
+    "predictions": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/predictions.jsonl",
+    "result": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z/result.json"
+  },
+  "baseline": {
+    "feature": "historical_demand_lag_1",
+    "name": "last_observation",
+    "policy": "Use certified historical value directly; no fallback for missing history"
+  },
+  "baseline_metrics": {
+    "test": {
+      "mae": 16.53432337329278,
+      "mape": 185.64192082141923,
+      "mape_excluded_zero_count": 0,
+      "mape_nonzero_count": 16767,
+      "mape_policy": "percent; exclude zero actuals; null when all actuals are zero",
+      "r2": -0.879962519368535,
+      "r2_policy": "null for fewer than two cases or constant actuals",
+      "rmse": 31.228276996805015,
+      "sample_count": 16767
+    },
+    "validation": {
+      "mae": 12.512682781259326,
+      "mape": 144.03945021086642,
+      "mape_excluded_zero_count": 0,
+      "mape_nonzero_count": 16755,
+      "mape_policy": "percent; exclude zero actuals; null when all actuals are zero",
+      "r2": -0.7384140112440236,
+      "r2_policy": "null for fewer than two cases or constant actuals",
+      "rmse": 25.710671234697568,
+      "sample_count": 16755
+    }
+  },
+  "baseline_vs_selected": {
+    "test": {
+      "absolute_improvement": 5.634642152856747,
+      "baseline": 16.53432337329278,
+      "improved": true,
+      "metric": "mae",
+      "relative_improvement": 0.3407845622493483,
+      "selected": 10.899681220436031,
+      "status": "MEASURED"
+    },
+    "validation": {
+      "absolute_improvement": 3.108132390005075,
+      "baseline": 12.512682781259326,
+      "improved": true,
+      "metric": "mae",
+      "relative_improvement": 0.24839856043183892,
+      "selected": 9.40455039125425,
+      "status": "MEASURED"
+    }
+  },
+  "dataset_version": "production-v1.1",
+  "engine": "spark",
+  "evidence_status": "CERTIFIED RUNTIME MEASURED; REVIEW ACCEPTANCE",
+  "feature_list": [
+    "scheduled_hour_utc",
+    "service_weekday",
+    "is_weekend",
+    "service_month",
+    "historical_demand_lag_1",
+    "historical_demand_mean_7"
+  ],
+  "feature_version": "spark-spark-prod-v11-20260928T0944Z-1a7c3f-passenger_demand",
+  "input_hashes": {
+    "manifest_sha256": "9e35b3247f4253cc47fcab40ac405792c8d595b0fb541bcdde7d68822e268dc6",
+    "partition_sha256": {
+      "test": "936da086f86dca63aeef517d6cb307a2365a6aba14d25d17e06e8188f41c84e8",
+      "train": "465f252c479d7b59d0bb84a8d922c1c0ce78dc29e69bcd81afcfa879c594a795",
+      "validation": "05a868431a0f3699cb2e242f72eb0ee355be15425303a2afc1ecf65815e0234a"
+    }
+  },
+  "metrics": {
+    "test": {
+      "mae": 10.899681220436031,
+      "mape": 161.16584200917225,
+      "mape_excluded_zero_count": 0,
+      "mape_nonzero_count": 16767,
+      "mape_policy": "percent; exclude zero actuals; null when all actuals are zero",
+      "r2": 0.03677073168899225,
+      "r2_policy": "null for fewer than two cases or constant actuals",
+      "rmse": 22.35312582261867,
+      "sample_count": 16767
+    },
+    "validation": {
+      "mae": 9.40455039125425,
+      "mape": 148.71083796844977,
+      "mape_excluded_zero_count": 0,
+      "mape_nonzero_count": 16755,
+      "mape_policy": "percent; exclude zero actuals; null when all actuals are zero",
+      "r2": 0.05851385688144628,
+      "r2_policy": "null for fewer than two cases or constant actuals",
+      "rmse": 18.920986437166817,
+      "sample_count": 16755
+    }
+  },
+  "model_comparison": [
+    {
+      "effective_parameters": {
+        "stage0.inputCol": "raw_features",
+        "stage0.outputCol": "features",
+        "stage0.withMean": true,
+        "stage0.withStd": true,
+        "stage1.aggregationDepth": 2,
+        "stage1.elasticNetParam": 0.0,
+        "stage1.epsilon": 1.35,
+        "stage1.featuresCol": "features",
+        "stage1.fitIntercept": true,
+        "stage1.labelCol": "label",
+        "stage1.loss": "squaredError",
+        "stage1.maxBlockSizeInMB": 0.0,
+        "stage1.maxIter": 100,
+        "stage1.predictionCol": "prediction",
+        "stage1.regParam": 1.0,
+        "stage1.solver": "auto",
+        "stage1.standardization": true,
+        "stage1.tol": 1e-06
+      },
+      "model_name": "linear_regression",
+      "model_type": "regression",
+      "parameters": {
+        "regularization": 1.0
+      },
+      "random_seed": null,
+      "runtime_sec": 25.30281664499944,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "mae": 10.097891202860119,
+        "mape": 164.76278985728126,
+        "mape_excluded_zero_count": 0,
+        "mape_nonzero_count": 16755,
+        "mape_policy": "percent; exclude zero actuals; null when all actuals are zero",
+        "r2": 0.026954898294250462,
+        "r2_policy": "null for fewer than two cases or constant actuals",
+        "rmse": 19.235491757775474,
+        "sample_count": 16755
+      }
+    },
+    {
+      "effective_parameters": {
+        "stage0.inputCol": "raw_features",
+        "stage0.outputCol": "features",
+        "stage0.withMean": true,
+        "stage0.withStd": true,
+        "stage1.cacheNodeIds": false,
+        "stage1.checkpointInterval": 10,
+        "stage1.featuresCol": "features",
+        "stage1.impurity": "variance",
+        "stage1.labelCol": "label",
+        "stage1.leafCol": "",
+        "stage1.maxBins": 32,
+        "stage1.maxDepth": 6,
+        "stage1.maxMemoryInMB": 256,
+        "stage1.minInfoGain": 0.0,
+        "stage1.minInstancesPerNode": 1,
+        "stage1.minWeightFractionPerNode": 0.0,
+        "stage1.predictionCol": "prediction",
+        "stage1.seed": 20260926
+      },
+      "model_name": "decision_tree",
+      "model_type": "regression",
+      "parameters": {
+        "max_depth": 6
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 12.558962968000742,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "mae": 9.739145630734129,
+        "mape": 149.5479995115799,
+        "mape_excluded_zero_count": 0,
+        "mape_nonzero_count": 16755,
+        "mape_policy": "percent; exclude zero actuals; null when all actuals are zero",
+        "r2": 0.0537609037634994,
+        "r2_policy": "null for fewer than two cases or constant actuals",
+        "rmse": 18.968686208139054,
+        "sample_count": 16755
+      }
+    },
+    {
+      "effective_parameters": {
+        "stage0.inputCol": "raw_features",
+        "stage0.outputCol": "features",
+        "stage0.withMean": true,
+        "stage0.withStd": true,
+        "stage1.bootstrap": true,
+        "stage1.cacheNodeIds": false,
+        "stage1.checkpointInterval": 10,
+        "stage1.featureSubsetStrategy": "auto",
+        "stage1.featuresCol": "features",
+        "stage1.impurity": "variance",
+        "stage1.labelCol": "label",
+        "stage1.leafCol": "",
+        "stage1.maxBins": 32,
+        "stage1.maxDepth": 8,
+        "stage1.maxMemoryInMB": 256,
+        "stage1.minInfoGain": 0.0,
+        "stage1.minInstancesPerNode": 1,
+        "stage1.minWeightFractionPerNode": 0.0,
+        "stage1.numTrees": 80,
+        "stage1.predictionCol": "prediction",
+        "stage1.seed": 20260926,
+        "stage1.subsamplingRate": 1.0
+      },
+      "model_name": "random_forest",
+      "model_type": "regression",
+      "parameters": {
+        "max_depth": 8,
+        "n_estimators": 80
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 24.229113659000177,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "mae": 9.40455039125425,
+        "mape": 148.71083796844977,
+        "mape_excluded_zero_count": 0,
+        "mape_nonzero_count": 16755,
+        "mape_policy": "percent; exclude zero actuals; null when all actuals are zero",
+        "r2": 0.05851385688144628,
+        "r2_policy": "null for fewer than two cases or constant actuals",
+        "rmse": 18.920986437166817,
+        "sample_count": 16755
+      }
+    }
+  ],
+  "model_name": "random_forest",
+  "model_type": "regression",
+  "parameters": {
+    "stage0.inputCol": "raw_features",
+    "stage0.outputCol": "features",
+    "stage0.withMean": true,
+    "stage0.withStd": true,
+    "stage1.bootstrap": true,
+    "stage1.cacheNodeIds": false,
+    "stage1.checkpointInterval": 10,
+    "stage1.featureSubsetStrategy": "auto",
+    "stage1.featuresCol": "features",
+    "stage1.impurity": "variance",
+    "stage1.labelCol": "label",
+    "stage1.leafCol": "",
+    "stage1.maxBins": 32,
+    "stage1.maxDepth": 8,
+    "stage1.maxMemoryInMB": 256,
+    "stage1.minInfoGain": 0.0,
+    "stage1.minInstancesPerNode": 1,
+    "stage1.minWeightFractionPerNode": 0.0,
+    "stage1.numTrees": 80,
+    "stage1.predictionCol": "prediction",
+    "stage1.seed": 20260926,
+    "stage1.subsamplingRate": 1.0
+  },
+  "periods": {
+    "test": {
+      "end": "2026-06-30",
+      "start": "2026-04-01"
+    },
+    "train": {
+      "end": "2025-12-31",
+      "start": "2025-01-01"
+    },
+    "validation": {
+      "end": "2026-03-31",
+      "start": "2026-01-01"
+    }
+  },
+  "random_seed": 20260926,
+  "reproducibility": {
+    "command": [
+      "/home/manal/Desktop/UrbanTransit-IQ/ml_execution/__main__.py",
+      "--engine",
+      "spark",
+      "--manifest",
+      "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_handoffs/spark-demand-forecast-prod-v11-20260928T1650Z/manifest.json",
+      "--output",
+      "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-passenger-demand-prod-v11-20260928T1700Z",
+      "--max-rows",
+      "100000"
+    ],
+    "created_at_utc": "2026-09-28T11:34:32.486835+00:00",
+    "libraries": {
+      "numpy": "1.26.4",
+      "pyspark": null,
+      "scikit-learn": "1.7.2"
+    },
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "source_sha256": {
+      "ml_execution/__init__.py": "a4c084b9908f2c28c9836e5a2e74adb5ebb07d3727f0faeb280f9f7f7642d711",
+      "ml_execution/__main__.py": "779f9ba5b96ee8f5a3abb8a050a4d0b452bcf0e74e258f86bd444b5f8ec98817",
+      "ml_execution/analytics.py": "91d348317fad956e6bd61552650de521946ef621058456f03cac921b4b8f423a",
+      "ml_execution/contracts.py": "a6d2ada926990f648d2a74da420f14fb8937f2ecc5961d9e882041ac29b174a1",
+      "ml_execution/demand_handoff.py": "d823c47a58b0f2830c8e3fcf688b19c9047f767e8148992a8169b8a10764c6e8",
+      "ml_execution/handoff.py": "8f1618d11e2e5db46e0ff869680cbf90635cc9d6f900343c32d986271b2101b9",
+      "ml_execution/metrics.py": "86f19bed1d6b8ef063efd7b2eebbe08fd4fc7c769c85ae2ae850b8ddec869b86",
+      "ml_execution/models.py": "78e476f776f5461e4fc67abdf72aee2ef7c12080af8065ce7c605beaba303b90",
+      "ml_execution/results.py": "6c9ea771fed00933f08048fe978ede4d0bea68a304f1962de426827eaf517b99",
+      "ml_execution/runner.py": "8343efd23540dbacfba75dad439e74e6ec76adbd221074a282cfc9beb422ab15",
+      "python_pipeline/splits.py": "461ee6c9e84bcfcfb6223b4d57409b53366260b6eec78c6262f281848524af25"
+    },
+    "spark_conf": {
+      "spark.default.parallelism": null,
+      "spark.master": "local[2]",
+      "spark.sql.shuffle.partitions": "16"
+    },
+    "spark_version": "3.5.0",
+    "thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  },
+  "runtime_sec": 82.14971700700062,
+  "sample_counts": {
+    "test": 16767,
+    "train": 66478,
+    "validation": 16755
+  },
+  "schema_version": "1.0",
+  "selected_model": "random_forest",
+  "selection_metric": "mae",
+  "selection_rationale": "Best measured validation mae=9.40455039125425; alphabetical tie-break; test excluded from selection",
+  "status": "SUCCEEDED",
+  "task_contract": {
+    "baseline_column": "historical_demand_lag_1",
+    "baseline_type": "last_observation",
+    "certification": {
+      "evidence_path": "feature_certification.json",
+      "scope": "bounded ML handoff integrity and temporal-contract validation only",
+      "status": "CERTIFIED"
+    },
+    "dataset_version": "production-v1.1",
+    "feature_version": "spark-spark-prod-v11-20260928T0944Z-1a7c3f-passenger_demand",
+    "features": [
+      "scheduled_hour_utc",
+      "service_weekday",
+      "is_weekend",
+      "service_month",
+      "historical_demand_lag_1",
+      "historical_demand_mean_7"
+    ],
+    "forecast_horizon": "scheduled trip departure to final available counted journey",
+    "forecast_protocol": "rolling_origin_frozen_model",
+    "grain": "one observed trip/service date; served passenger journey count",
+    "producer": "spark",
+    "schema_version": "1.0",
+    "source_feature_task": "demand_forecast",
+    "source_provenance": {
+      "dataset_version": "production-v1.1",
+      "eligible_row_counts": {
+        "test": 19249,
+        "train": 76321,
+        "validation": 19236
+      },
+      "feature_availability_policy": "Spark's past-only history transformation promotes outcome rows into lag history only when target_available_at <= the current scheduled-departure cutoff.",
+      "max_rows": 100000,
+      "producer": "spark",
+      "sample_counts": {
+        "test": 16767,
+        "train": 66478,
+        "validation": 16755
+      },
+      "sample_policy": "Deterministic Spark xxhash64 ranking of trip_id and operational_departure_id within each original chronological split; no feature or target derivation.",
+      "sample_seed": 20260926,
+      "source_dataset_certification": "REQUIRES_REVALIDATION",
+      "source_date_ranges": {
+        "test": {
+          "max": "2026-06-30",
+          "min": "2026-04-01"
+        },
+        "train": {
+          "max": "2025-12-31",
+          "min": "2025-01-01"
+        },
+        "validation": {
+          "max": "2026-03-31",
+          "min": "2026-01-01"
+        }
+      },
+      "source_evidence_path": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-20260928T0944Z-1a7c3f/evidence/run_id=spark-prod-v11-20260928T0944Z-1a7c3f/events-33",
+      "source_feature_base": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-20260928T0944Z-1a7c3f/features",
+      "source_quality_notice": "The handoff certificate does not certify the underlying production dataset or override its REQUIRES_REVALIDATION status.",
+      "source_row_counts": {
+        "test": 19502,
+        "train": 78695,
+        "validation": 19404
+      },
+      "spark_run_id": "spark-prod-v11-20260928T0944Z-1a7c3f"
+    },
+    "target": "target",
+    "target_definition": "Existing Spark demand_forecast passenger_demand sum of passenger_count per trip; no target aggregation was repeated. Feature cutoff is scheduled trip departure. The target interval ends at the observed maximum target_available_at for the trip's journey evidence; rows whose outcome availability crosses the chronological period boundary are excluded.",
+    "task_name": "passenger_demand"
+  },
+  "task_name": "passenger_demand"
+}

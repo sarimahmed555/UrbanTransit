@@ -1,0 +1,116 @@
+{
+  "alignment": {
+    "case_identity": "stop_event_id extracted from Spark length-prefixed trip_id + stop_event_id",
+    "policy": "production-v1.1-delay-source-event-utc5",
+    "python_only_test_cases": 14159,
+    "python_test_cases": 16588,
+    "scope": "comparison only; source result and prediction artifacts are unchanged",
+    "shared_test_cases": 2429,
+    "spark_only_test_cases": 14159,
+    "spark_target_timestamp_correction_hours": -5,
+    "spark_test_cases": 16588,
+    "timestamp_basis": "Asia/Karachi fixed UTC+05:00; normalize Spark target timestamps to UTC"
+  },
+  "comparison_case_count": 2429,
+  "comparison_stage": "spark_python_comparison",
+  "dataset_version": "production-v1.1",
+  "ended_at_utc": "2026-09-28T14:52:12.179199Z",
+  "input_artifacts": {
+    "python_predictions": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/python-delay-severity-prod-v11-20260928T2030Z/predictions.jsonl",
+    "python_result": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/python-delay-severity-prod-v11-20260928T2030Z/result.json",
+    "spark_predictions": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/predictions.jsonl",
+    "spark_result": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-delay-severity-prod-v11-20260928T1630Z/result.json"
+  },
+  "input_sha256": {
+    "python_predictions": "adb3b1921e200a93fa320b45d78a1b61c612105112f900bd096d8be1d58452bd",
+    "python_result": "4ce60b14cfec3cf925bedee64d3cc965e88240a118a0db821695c82bd26d9658",
+    "spark_predictions": "1630830b2190cb480d39c6d5b90984c5f50a0730b7fbc50c353e5af0f6cb73fc",
+    "spark_result": "6ed7d0fc3eb7203077ea8c3ad07ac6da98b74ddd2e72481bbbbaa19b1ef4bc04"
+  },
+  "metrics": {
+    "agreement_rate": 0.9971181556195965,
+    "matching_predictions": 2422,
+    "mismatching_predictions": 7,
+    "numeric_delta_max_abs": 2.0,
+    "numeric_delta_mean": 0.005763688760806916,
+    "python_only_test_cases": 14159,
+    "python_test_cases": 16588,
+    "shared_test_cases": 2429,
+    "spark_only_test_cases": 14159,
+    "spark_test_cases": 16588
+  },
+  "minimum_unseen_test_cases": 100,
+  "mismatches": [
+    {
+      "case_id": "TSE0c01b3cbc159f1cbc2b2e615f3be8725293e0f2d23b3d277c3e1f1ca47e3a469",
+      "delta_spark_minus_python": 2.0,
+      "python_prediction": 0,
+      "service_date": "2026-04-30",
+      "spark_prediction": 2.0
+    },
+    {
+      "case_id": "TSE370a551f608020d16285fd67ecfb4af6cd74936ee6ee85e019015505436f5e55",
+      "delta_spark_minus_python": 2.0,
+      "python_prediction": 0,
+      "service_date": "2026-04-06",
+      "spark_prediction": 2.0
+    },
+    {
+      "case_id": "TSE41ff9eaf77a615540938e1d556aa4eb0d8cc356726820602010db3e8390ca3c7",
+      "delta_spark_minus_python": 2.0,
+      "python_prediction": 0,
+      "service_date": "2026-04-01",
+      "spark_prediction": 2.0
+    },
+    {
+      "case_id": "TSEc3fbadda3e14e77cfaa37a6eb749517ab6287ad85a700937be2cb9e6007cc98e",
+      "delta_spark_minus_python": 2.0,
+      "python_prediction": 0,
+      "service_date": "2026-05-01",
+      "spark_prediction": 2.0
+    },
+    {
+      "case_id": "TSEdf355a062b333c3f36b012413efa775260ac24287b4c967fb79bceafb9356cf9",
+      "delta_spark_minus_python": 2.0,
+      "python_prediction": 0,
+      "service_date": "2026-04-13",
+      "spark_prediction": 2.0
+    },
+    {
+      "case_id": "TSEf037ecd974ec2f1168c36bbc82c25b07aa20187033940ac1cc2071c3a1fa19a6",
+      "delta_spark_minus_python": 2.0,
+      "python_prediction": 0,
+      "service_date": "2026-05-07",
+      "spark_prediction": 2.0
+    },
+    {
+      "case_id": "TSEf617dca82a6db29b822178a67dcb7f6c1e1dc57d2ad6434daa411551ea4996c5",
+      "delta_spark_minus_python": 2.0,
+      "python_prediction": 0,
+      "service_date": "2026-06-21",
+      "spark_prediction": 2.0
+    }
+  ],
+  "output_artifact": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_comparisons/stage=spark_python_comparison/dataset=production-v1.1/run=python-delay-v11-normalized-20260928T2100Z/comparison.json",
+  "pipelines": {
+    "python": {
+      "feature_version": "python-raw-delay-1607c910dd6dbe59759dd7a8ceb955cc2b44f31739a4bbd655ef654b95036cdd",
+      "pipeline_id": "ml_execution:python",
+      "prediction_hash": "adb3b1921e200a93fa320b45d78a1b61c612105112f900bd096d8be1d58452bd",
+      "result_hash": "4ce60b14cfec3cf925bedee64d3cc965e88240a118a0db821695c82bd26d9658"
+    },
+    "spark": {
+      "feature_version": "spark-spark-prod-v11-20260928T0944Z-1a7c3f-delay_severity",
+      "pipeline_id": "ml_execution:spark",
+      "prediction_hash": "1630830b2190cb480d39c6d5b90984c5f50a0730b7fbc50c353e5af0f6cb73fc",
+      "result_hash": "6ed7d0fc3eb7203077ea8c3ad07ac6da98b74ddd2e72481bbbbaa19b1ef4bc04"
+    }
+  },
+  "reason": null,
+  "run_id": "python-delay-v11-normalized-20260928T2100Z",
+  "runtime_sec": 1.0138677989998541,
+  "schema_version": "1.0",
+  "started_at_utc": "2026-09-28T14:52:11.165328Z",
+  "status": "SUCCEEDED",
+  "task_name": "delay_severity"
+}

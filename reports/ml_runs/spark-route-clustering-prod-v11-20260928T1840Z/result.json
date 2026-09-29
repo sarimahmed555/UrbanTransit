@@ -1,0 +1,293 @@
+{
+  "acceptance": null,
+  "artifact_paths": {
+    "cluster_interpretation": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/cluster_interpretation.json",
+    "model": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/selected_spark_model",
+    "predictions": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/predictions.jsonl",
+    "result": "/home/manal/Desktop/UrbanTransit-IQ/reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z/result.json"
+  },
+  "baseline_metrics": {},
+  "dataset_version": "production-v1.1",
+  "engine": "spark",
+  "evidence_status": "CERTIFIED RUNTIME MEASURED; REVIEW ACCEPTANCE",
+  "feature_list": [
+    "mean_observed_load",
+    "mean_capacity_utilization",
+    "mean_delay_sec",
+    "mean_route_distance_km",
+    "mean_abs_headway_deviation_sec",
+    "distinct_stops",
+    "mean_served_demand_per_trip"
+  ],
+  "feature_version": "spark-route-clustering-temporal-prod-v11-20260928",
+  "input_hashes": {
+    "manifest_sha256": "ccabcb435bbecf273d78d412724889fcfffe006bc6da42efafda0cecc3f330da",
+    "partition_sha256": {
+      "test": "70835963e53364bf582c21da82e581dc28d9ccbc543587840910d15d8391faf5",
+      "train": "c49b02c2ed3ffadd9cb299f414534e908cd5e1e2806457937cb71434235e740d",
+      "validation": "ae73b08944621c5e0f4663f47b293ec418e19203de0127b765dd9655df5a56fa"
+    }
+  },
+  "metrics": {
+    "test": {
+      "distance": "euclidean on independently train-standardized features",
+      "sample_count": 120,
+      "sample_seed": 20260926,
+      "silhouette": 0.046933356093852706
+    },
+    "validation": {
+      "distance": "euclidean on independently train-standardized features",
+      "sample_count": 110,
+      "sample_seed": 20260926,
+      "silhouette": 0.4519425438089758
+    }
+  },
+  "model_comparison": [
+    {
+      "effective_parameters": {
+        "stage0.inputCol": "raw_features",
+        "stage0.outputCol": "features",
+        "stage0.withMean": true,
+        "stage0.withStd": true,
+        "stage1.distanceMeasure": "euclidean",
+        "stage1.featuresCol": "features",
+        "stage1.initMode": "k-means||",
+        "stage1.initSteps": 2,
+        "stage1.k": 2,
+        "stage1.maxBlockSizeInMB": 0.0,
+        "stage1.maxIter": 100,
+        "stage1.predictionCol": "prediction",
+        "stage1.seed": 20260926,
+        "stage1.solver": "auto",
+        "stage1.tol": 0.0001
+      },
+      "model_name": "kmeans_k2",
+      "model_type": "clustering",
+      "parameters": {
+        "k": 2,
+        "max_iter": 100
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 17.243128672998864,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "distance": "euclidean on independently train-standardized features",
+        "sample_count": 110,
+        "sample_seed": 20260926,
+        "silhouette": 0.3847082435125439
+      }
+    },
+    {
+      "effective_parameters": {
+        "stage0.inputCol": "raw_features",
+        "stage0.outputCol": "features",
+        "stage0.withMean": true,
+        "stage0.withStd": true,
+        "stage1.distanceMeasure": "euclidean",
+        "stage1.featuresCol": "features",
+        "stage1.initMode": "k-means||",
+        "stage1.initSteps": 2,
+        "stage1.k": 3,
+        "stage1.maxBlockSizeInMB": 0.0,
+        "stage1.maxIter": 100,
+        "stage1.predictionCol": "prediction",
+        "stage1.seed": 20260926,
+        "stage1.solver": "auto",
+        "stage1.tol": 0.0001
+      },
+      "model_name": "kmeans_k3",
+      "model_type": "clustering",
+      "parameters": {
+        "k": 3,
+        "max_iter": 100
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 4.802248865000365,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "distance": "euclidean on independently train-standardized features",
+        "sample_count": 110,
+        "sample_seed": 20260926,
+        "silhouette": 0.390598928261578
+      }
+    },
+    {
+      "effective_parameters": {
+        "stage0.inputCol": "raw_features",
+        "stage0.outputCol": "features",
+        "stage0.withMean": true,
+        "stage0.withStd": true,
+        "stage1.distanceMeasure": "euclidean",
+        "stage1.featuresCol": "features",
+        "stage1.initMode": "k-means||",
+        "stage1.initSteps": 2,
+        "stage1.k": 4,
+        "stage1.maxBlockSizeInMB": 0.0,
+        "stage1.maxIter": 100,
+        "stage1.predictionCol": "prediction",
+        "stage1.seed": 20260926,
+        "stage1.solver": "auto",
+        "stage1.tol": 0.0001
+      },
+      "model_name": "kmeans_k4",
+      "model_type": "clustering",
+      "parameters": {
+        "k": 4,
+        "max_iter": 100
+      },
+      "random_seed": 20260926,
+      "runtime_sec": 3.924382062999939,
+      "status": "SUCCEEDED",
+      "validation_metrics": {
+        "distance": "euclidean on independently train-standardized features",
+        "sample_count": 110,
+        "sample_seed": 20260926,
+        "silhouette": 0.4519425438089758
+      }
+    }
+  ],
+  "model_name": "kmeans_k4",
+  "model_type": "clustering",
+  "parameters": {
+    "stage0.inputCol": "raw_features",
+    "stage0.outputCol": "features",
+    "stage0.withMean": true,
+    "stage0.withStd": true,
+    "stage1.distanceMeasure": "euclidean",
+    "stage1.featuresCol": "features",
+    "stage1.initMode": "k-means||",
+    "stage1.initSteps": 2,
+    "stage1.k": 4,
+    "stage1.maxBlockSizeInMB": 0.0,
+    "stage1.maxIter": 100,
+    "stage1.predictionCol": "prediction",
+    "stage1.seed": 20260926,
+    "stage1.solver": "auto",
+    "stage1.tol": 0.0001
+  },
+  "periods": {
+    "test": {
+      "end": "2026-06-30",
+      "start": "2026-04-01"
+    },
+    "train": {
+      "end": "2025-12-31",
+      "start": "2025-01-01"
+    },
+    "validation": {
+      "end": "2026-03-31",
+      "start": "2026-01-01"
+    }
+  },
+  "random_seed": 20260926,
+  "reproducibility": {
+    "command": [
+      "/home/manal/Desktop/UrbanTransit-IQ/ml_execution/__main__.py",
+      "--engine",
+      "spark",
+      "--manifest",
+      "reports/ml_handoffs/spark-route-clustering-temporal-prod-v11-20260928T1830Z/manifest.json",
+      "--output",
+      "reports/ml_runs/spark-route-clustering-prod-v11-20260928T1840Z"
+    ],
+    "created_at_utc": "2026-09-28T13:19:24.127240+00:00",
+    "libraries": {
+      "numpy": "1.26.4",
+      "pyspark": null,
+      "scikit-learn": "1.7.2"
+    },
+    "platform": "Linux-6.8.0-138-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12 (main, Aug 31 2026, 10:18:17) [GCC 11.4.0]",
+    "source_sha256": {
+      "ml_execution/__init__.py": "a4c084b9908f2c28c9836e5a2e74adb5ebb07d3727f0faeb280f9f7f7642d711",
+      "ml_execution/__main__.py": "779f9ba5b96ee8f5a3abb8a050a4d0b452bcf0e74e258f86bd444b5f8ec98817",
+      "ml_execution/analytics.py": "91d348317fad956e6bd61552650de521946ef621058456f03cac921b4b8f423a",
+      "ml_execution/clustering_handoff.py": "316791b157c67f41594c82e10bf6e8d92cbed7f7b77dd98fd0eb33e1b6b3d7b6",
+      "ml_execution/contracts.py": "15855487ee14fc325dbb5aecd2e7a2a6862695be43ce3d768dca2203c8d92e52",
+      "ml_execution/demand_handoff.py": "d823c47a58b0f2830c8e3fcf688b19c9047f767e8148992a8169b8a10764c6e8",
+      "ml_execution/handoff.py": "8f1618d11e2e5db46e0ff869680cbf90635cc9d6f900343c32d986271b2101b9",
+      "ml_execution/metrics.py": "86f19bed1d6b8ef063efd7b2eebbe08fd4fc7c769c85ae2ae850b8ddec869b86",
+      "ml_execution/models.py": "78e476f776f5461e4fc67abdf72aee2ef7c12080af8065ce7c605beaba303b90",
+      "ml_execution/occupancy_handoff.py": "5564ae44d01182997b65f330b7db44b8f554d288434419172748fd1bb6e17f34",
+      "ml_execution/results.py": "6c9ea771fed00933f08048fe978ede4d0bea68a304f1962de426827eaf517b99",
+      "ml_execution/runner.py": "8343efd23540dbacfba75dad439e74e6ec76adbd221074a282cfc9beb422ab15",
+      "python_pipeline/splits.py": "461ee6c9e84bcfcfb6223b4d57409b53366260b6eec78c6262f281848524af25"
+    },
+    "spark_conf": {
+      "spark.default.parallelism": null,
+      "spark.master": "local[2]",
+      "spark.sql.shuffle.partitions": "8"
+    },
+    "spark_version": "3.5.0",
+    "thread_environment": {
+      "MKL_NUM_THREADS": null,
+      "OMP_NUM_THREADS": null,
+      "OPENBLAS_NUM_THREADS": null
+    }
+  },
+  "runtime_sec": 38.096869128001345,
+  "sample_counts": {
+    "test": 120,
+    "train": 110,
+    "validation": 110
+  },
+  "schema_version": "1.0",
+  "selected_model": "kmeans_k4",
+  "selection_metric": "silhouette",
+  "selection_rationale": "Best measured validation silhouette=0.4519425438089758; alphabetical tie-break; test excluded from selection",
+  "status": "SUCCEEDED",
+  "task_contract": {
+    "certification": {
+      "evidence_path": "feature_certification.json",
+      "scope": "bounded handoff integrity, chronology, and temporal holdout provenance",
+      "status": "CERTIFIED"
+    },
+    "dataset_version": "production-v1.1",
+    "feature_version": "spark-route-clustering-temporal-prod-v11-20260928",
+    "features": [
+      "mean_observed_load",
+      "mean_capacity_utilization",
+      "mean_delay_sec",
+      "mean_route_distance_km",
+      "mean_abs_headway_deviation_sec",
+      "distinct_stops",
+      "mean_served_demand_per_trip"
+    ],
+    "grain": "one route and direction profile aggregated within one chronological period",
+    "producer": "spark",
+    "schema_version": "1.0",
+    "source_provenance": {
+      "dataset_version": "production-v1.1",
+      "demand_run_id": "spark-prod-v11-20260928T0944Z-1a7c3f",
+      "demand_source_paths": {
+        "test": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-20260928T0944Z-1a7c3f/features/task=demand_forecast/split=test",
+        "train": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-20260928T0944Z-1a7c3f/features/task=demand_forecast/split=train",
+        "validation": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-20260928T0944Z-1a7c3f/features/task=demand_forecast/split=validation"
+      },
+      "feature_definitions": {
+        "distinct_stops": "count of distinct observed stop_id values",
+        "mean_abs_headway_deviation_sec": "mean absolute actual-minus-scheduled headway deviation",
+        "mean_capacity_utilization": "mean available observed capacity_utilization",
+        "mean_delay_sec": "mean max(0, actual_departure-scheduled_departure)",
+        "mean_observed_load": "mean available onboard_departure observations",
+        "mean_route_distance_km": "mean observed route-stop distance_km",
+        "mean_served_demand_per_trip": "mean existing passenger_demand labels with availability within the period"
+      },
+      "occupancy_run_id": "spark-prod-v11-occupancy-20260928T1124Z-4c9e1f",
+      "occupancy_source_paths": {
+        "test": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-occupancy-20260928T1124Z-4c9e1f/features/task=occupancy/split=test",
+        "train": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-occupancy-20260928T1124Z-4c9e1f/features/task=occupancy/split=train",
+        "validation": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-occupancy-20260928T1124Z-4c9e1f/features/task=occupancy/split=validation"
+      },
+      "producer": "spark",
+      "source_dataset_certification": "REQUIRES_REVALIDATION",
+      "source_quality_notice": "Handoff certification binds package hashes and temporal policy only; production-v1.1 remains REQUIRES_REVALIDATION.",
+      "temporal_evaluation": "train-fit; validation-select; test-held-out",
+      "training_profile_path": "hdfs://localhost:9000/urbantransit/runs/stage=spark_pipeline/dataset=production-v1.1/run=spark-prod-v11-route-clustering-20260928T1443Z-01/features/task=route_clustering/training_window=2025",
+      "training_profile_run_id": "spark-prod-v11-route-clustering-20260928T1443Z-01"
+    },
+    "target_definition": "Unsupervised route operational profile; no generated cluster labels or predefined archetypes. Fit the scaler and K-means candidates using 2025 profiles only, then apply them unchanged to 2026-Q1 and 2026-Q2 profiles.",
+    "task_name": "route_clustering"
+  },
+  "task_name": "route_clustering"
+}
