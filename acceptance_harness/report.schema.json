@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "UrbanTransit IQ SRS Acceptance Report v1.0",
+  "type": "object",
+  "required": ["schema_version", "report_type", "scope", "generated_at", "dataset_version", "source_revision", "catalog_sha256", "overall_state", "counts", "checks", "blockers", "actions", "limitations"],
+  "properties": {
+    "schema_version": {"const": "1.0"},
+    "report_type": {"const": "SRS_ACCEPTANCE"},
+    "scope": {"enum": ["FIXTURE_ONLY", "REAL_EVIDENCE"]},
+    "generated_at": {"type": "string", "format": "date-time"},
+    "dataset_version": {"type": ["string", "null"]},
+    "source_revision": {"type": ["string", "null"]},
+    "catalog_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "overall_state": {"$ref": "#/$defs/state"},
+    "counts": {
+      "type": "object",
+      "required": ["PASS", "FAIL", "PENDING_RUNTIME", "NOT_APPLICABLE", "BLOCKED"],
+      "additionalProperties": {"type": "integer", "minimum": 0}
+    },
+    "checks": {"type": "array", "items": {"$ref": "#/$defs/check"}},
+    "blockers": {"type": "array", "items": {"type": "object", "required": ["id", "reason", "blocked_by"]}},
+    "actions": {"type": "array", "items": {"type": "object", "required": ["id", "state", "action", "missing_or_failed"]}},
+    "limitations": {"type": "array", "items": {"type": "string"}}
+  },
+  "allOf": [{"if": {"properties": {"scope": {"const": "FIXTURE_ONLY"}}}, "then": {"properties": {"overall_state": {"const": "PENDING_RUNTIME"}}}}],
+  "$defs": {
+    "state": {"enum": ["PASS", "FAIL", "PENDING_RUNTIME", "NOT_APPLICABLE", "BLOCKED"]},
+    "check": {
+      "type": "object",
+      "required": ["id", "title", "reference", "basis", "evidence_kind", "evaluator", "state", "reason", "source", "blocked_by", "acceptance_eligible"],
+      "properties": {
+        "id": {"type": "string"},
+        "title": {"type": "string"},
+        "reference": {"type": "string"},
+        "basis": {"enum": ["SRS_MANDATORY", "IMPLEMENTATION_CHOICE"]},
+        "evidence_kind": {"enum": ["runtime", "review"]},
+        "state": {"$ref": "#/$defs/state"},
+        "reason": {"type": "string"},
+        "acceptance_eligible": {"type": "boolean"},
+        "blocked_by": {"type": "array", "items": {"type": "string"}},
+        "source": {"type": ["object", "null"]}
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "task_name": "passenger_demand",
+  "dataset_version": "AWAITING_CERTIFIED_DATASET_VERSION",
+  "feature_version": "AWAITING_CERTIFIED_FEATURE_VERSION",
+  "producer": "python",
+  "grain": "route-stop-hour; confirm with feature engineering",
+  "target_definition": "served passenger count next hour; baseline is same interval one week earlier, available at issue time; awaiting certification",
+  "target": "passenger_demand",
+  "features": ["demand_lag_7d", "scheduled_hour", "scheduled_weekday"],
+  "baseline_column": "demand_lag_7d",
+  "baseline_type": "seasonal_naive",
+  "forecast_protocol": "rolling_origin_frozen_model",
+  "forecast_horizon": "one hour",
+  "certification": {"status": "PENDING", "evidence_path": "feature_certification.json"},
+  "partitions": {
+    "train": {"path": "train/cases.jsonl", "sha256": "AWAITING_CERTIFIED_HASH"},
+    "validation": {"path": "validation/cases.jsonl", "sha256": "AWAITING_CERTIFIED_HASH"},
+    "test": {"path": "test/cases.jsonl", "sha256": "AWAITING_CERTIFIED_HASH"}
+  }
+}

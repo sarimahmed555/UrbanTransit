@@ -1,0 +1,4 @@
+# Phase 1 dataset generator dependencies.
+# The generator and validation tests use only the Python 3.10 standard library.
+# No package installation is authorized or required for this phase.
+# HDFS/Spark and later DS dependencies remain a separate implementation phase.

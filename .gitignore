@@ -1,0 +1,120 @@
+# Python virtual environments
+.venv/
+venv/
+env/
+ENV/
+venv-*/
+.venv-*/
+
+# Python caches and build artifacts
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+.coverage
+.coverage.*
+htmlcov/
+build/
+dist/
+*.egg-info/
+
+# IDE and system temporary files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*~
+*.swp
+*.swo
+*.tmp
+*.bak
+
+# Secrets and local environment files
+.env
+.env.*
+*.env
+*.env.*
+secrets/
+.secrets/
+credentials.json
+credentials.*.json
+*.pem
+*.key
+
+# Generated datasets (retain directory placeholders)
+/sample_data/smoke/
+/raw_data/**
+!/raw_data/**/
+!/raw_data/**/.gitkeep
+/processed_data/**
+!/processed_data/**/
+!/processed_data/**/.gitkeep
+/parquet_data/**
+!/parquet_data/**/
+!/parquet_data/**/.gitkeep
+
+# Local database and runtime artifacts
+*.db
+*.db-*
+*.sqlite
+*.sqlite3
+*.sqlite-*
+*.sqlite3-*
+*.log
+*.pid
+*.pid.lock
+/runtime/
+/logs/
+/tmp/
+/spark-warehouse/
+/metastore_db/
+/derby.log
+
+# Official competition SRS (local reference only; retain documentation/)
+/documentation/UrbanTransit IQ-Data Science Intelligence Arena_SRS.pdf
+.aider*
+
+# ============================================================
+# UrbanTransit IQ - generated/heavy/private artifacts
+# ============================================================
+
+# Python / environments
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Runtime / temporary files
+*.log
+*.tmp
+*.bak
+*.before_csv_escape_fix
+spark-warehouse/
+
+# Local remediation / agent working state
+.remediation_work/
+_change_ledger
+.aider*
+.agents/
+.codex/
+
+# Certified/generated large datasets
+raw_data/
+processed_data/
+parquet_data/
+
+# Large ML/runtime artifacts - final evidence packaged separately
+reports/ml_handoffs/
+reports/ml_runs/
+reports/runtime/
+reports/recovery/
+
+# Local generated validation logs
+reports/production_validation.log
+reports/production_v11_bounded_verification.log
+
+# Official competition SRS - do not redistribute in source repository
+documentation/UrbanTransit IQ-Data Science Intelligence Arena_SRS.pdf
